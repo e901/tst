@@ -11,12 +11,83 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
         
         /* Theme Styles */
+        :root {
+            /* Default values, will be overridden by selected theme */
+            --primary-color: #3b82f6;
+            --primary-gradient: linear-gradient(90deg, #3b82f6, #6366f1);
+            --primary-hover: #2563eb;
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+            --header-bg: rgba(255, 255, 255, 0.9);
+            --header-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --section-bg: #f9fafb;
+            --text-light: #6b7280;
+            --text-dark: #1f2937;
+            --border-color: #e5e7eb;
+            --input-bg: #f3f4f6;
+            --input-text: #4b5563;
+            --dropdown-bg: #e5e7eb;
+            --dropdown-text: #4b5563;
+            --footer-bg: #111827;
+            --footer-text: #9ca3af;
+            --footer-link-hover: #ffffff;
+            --hero-bg-from: #111827;
+            --hero-bg-via: #1f2937;
+            --hero-bg-to: #111827;
+            --hero-text: #ffffff;
+            --hero-text-light: rgba(255, 255, 255, 0.9);
+            --testimonial-bg: rgba(255, 255, 255, 0.1);
+            --testimonial-border: rgba(255, 255, 255, 0.2);
+            --testimonial-hover-bg: rgba(255, 255, 255, 0.15);
+            --testimonial-hover-border: rgba(255, 255, 255, 0.3);
+            --testimonial-quote-color: rgba(255, 255, 255, 0.2);
+            --cta-bg: #111827;
+            --cta-text: #ffffff;
+            --faq-bg: #f9fafb;
+            --faq-border: #e5e7eb;
+            --faq-question-bg: #f3f4f6;
+            --faq-question-hover-bg: #e5e7eb;
+            --faq-answer-bg: #ffffff;
+        }
+        
         .theme-blue {
             --primary-color: #3b82f6;
             --primary-gradient: linear-gradient(90deg, #3b82f6, #6366f1);
             --primary-hover: #2563eb;
             --text-color: #1f2937;
             --bg-color: #f9fafb;
+            --header-bg: rgba(255, 255, 255, 0.9);
+            --card-bg: #ffffff;
+            --section-bg: #f9fafb;
+            --text-light: #6b7280;
+            --text-dark: #1f2937;
+            --border-color: #e5e7eb;
+            --input-bg: #f3f4f6;
+            --input-text: #4b5563;
+            --dropdown-bg: #e5e7eb;
+            --dropdown-text: #4b5563;
+            --footer-bg: #111827;
+            --footer-text: #9ca3af;
+            --footer-link-hover: #ffffff;
+            --hero-bg-from: #111827;
+            --hero-bg-via: #1f2937;
+            --hero-bg-to: #111827;
+            --hero-text: #ffffff;
+            --hero-text-light: rgba(255, 255, 255, 0.9);
+            --testimonial-bg: rgba(255, 255, 255, 0.1);
+            --testimonial-border: rgba(255, 255, 255, 0.2);
+            --testimonial-hover-bg: rgba(255, 255, 255, 0.15);
+            --testimonial-hover-border: rgba(255, 255, 255, 0.3);
+            --testimonial-quote-color: rgba(255, 255, 255, 0.2);
+            --cta-bg: #111827;
+            --cta-text: #ffffff;
+            --faq-bg: #f9fafb;
+            --faq-border: #e5e7eb;
+            --faq-question-bg: #f3f4f6;
+            --faq-question-hover-bg: #e5e7eb;
+            --faq-answer-bg: #ffffff;
         }
         
         .theme-gold {
@@ -25,6 +96,36 @@
             --primary-hover: #b8860b;
             --text-color: #374151;
             --bg-color: #fefce8;
+            --header-bg: rgba(255, 255, 232, 0.9);
+            --card-bg: #fffbf0;
+            --section-bg: #fefce8;
+            --text-light: #a16207;
+            --text-dark: #374151;
+            --border-color: #fde68a;
+            --input-bg: #fffbeb;
+            --input-text: #a16207;
+            --dropdown-bg: #fcd34d;
+            --dropdown-text: #854d0e;
+            --footer-bg: #5a3800;
+            --footer-text: #d9a343;
+            --footer-link-hover: #fcd34d;
+            --hero-bg-from: #5a3800;
+            --hero-bg-via: #7c4d00;
+            --hero-bg-to: #5a3800;
+            --hero-text: #ffffff; /* Remains white for contrast on dark hero background */
+            --hero-text-light: rgba(255, 255, 255, 0.9); /* Remains light for contrast on dark hero background */
+            --testimonial-bg: rgba(212, 160, 23, 0.5);
+            --testimonial-border: rgba(184, 134, 11, 0.3);
+            --testimonial-hover-bg: rgba(212, 160, 23, 0.6);
+            --testimonial-hover-border: rgba(184, 134, 11, 0.4);
+            --testimonial-quote-color: rgba(255, 255, 255, 0.1); /* Remains light for decorative effect on dark background */
+            --cta-bg: #422006;
+            --cta-text: #ffffff; /* Remains white for contrast on dark CTA background */
+            --faq-bg: #fefce8;
+            --faq-border: #fde68a;
+            --faq-question-bg: #fffbeb;
+            --faq-question-hover-bg: #fcd34d;
+            --faq-answer-bg: #fffbf0;
         }
         
         .theme-pink {
@@ -33,92 +134,345 @@
             --primary-hover: #db2777;
             --text-color: #4b5563;
             --bg-color: #fdf2f8;
-        }
-        
-        /* Dark mode styles */
-        .dark {
-            --tw-bg-opacity: 1;
-            background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-            color: rgb(229 231 235 / var(--tw-text-opacity));
-        }
-        
-        .dark .gradient-text {
-            background: linear-gradient(90deg, #60a5fa, #818cf8);
-        }
-
-        .dark .bg-white\/90 {
-            background-color: rgba(31, 41, 55, 0.9);
-        }
-
-        .dark .shadow-md {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark .bg-gray-200 {
-            background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-        }
-
-        .dark .text-gray-700 {
-            color: rgb(209 213 219 / var(--tw-text-opacity));
-        }
-
-        .dark .border-gray-100 {
-            border-color: rgb(55 65 81 / var(--tw-border-opacity));
-        }
-
-        .dark .bg-gradient-to-r.from-gray-800.to-gray-900 {
-            background: linear-gradient(to right, rgb(31 41 55), rgb(17 24 39));
+            --header-bg: rgba(253, 242, 248, 0.9);
+            --card-bg: #ffffff;
+            --section-bg: #fdf2f8;
+            --text-light: #be185d;
+            --text-dark: #4b5563;
+            --border-color: #fbcfe8;
+            --input-bg: #fce7f3;
+            --input-text: #be185d;
+            --dropdown-bg: #fbcfe8;
+            --dropdown-text: #be185d;
+            --footer-bg: #831843;
+            --footer-text: #fbcfe8;
+            --footer-link-hover: #ffffff;
+            --hero-bg-from: #831843;
+            --hero-bg-via: #a32a63;
+            --hero-bg-to: #831843;
+            --hero-text: #ffffff;
+            --hero-text-light: rgba(255, 255, 255, 0.9);
+            --testimonial-bg: rgba(236, 72, 153, 0.5);
+            --testimonial-border: rgba(219, 39, 119, 0.3);
+            --testimonial-hover-bg: rgba(236, 72, 153, 0.6);
+            --testimonial-hover-border: rgba(219, 39, 119, 0.4);
+            --testimonial-quote-color: rgba(255, 255, 255, 0.1);
+            --cta-bg: #831843;
+            --cta-text: #ffffff;
+            --faq-bg: #fdf2f8;
+            --faq-border: #fbcfe8;
+            --faq-question-bg: #fce7f3;
+            --faq-question-hover-bg: #fbcfe8;
+            --faq-answer-bg: #ffffff;
         }
 
-        .dark .hover\:from-gray-900:hover {
-            background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+        /* Apply theme variables */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .dark .hover\:to-gray-800:hover {
-            background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+        .header-bg {
+            background-color: var(--header-bg);
+            box-shadow: var(--header-shadow);
         }
 
-        .dark .bg-white {
-            background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-            border-color: rgb(55 65 81 / var(--tw-border-opacity));
+        .logo-gradient {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .dark .bg-gray-50 {
-            background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+        .hero-title-gradient {
+            background: linear-gradient(to right, var(--primary-color), var(--primary-hover));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .dark .text-gray-800,
-        .dark .text-gray-700,
-        .dark .text-gray-600 {
-            color: rgb(209 213 219 / var(--tw-text-opacity));
+        .hero-section {
+            background: linear-gradient(to br, var(--hero-bg-from), var(--hero-bg-via), var(--hero-bg-to));
         }
 
-        .dark .border-gray-200,
-        .dark .border-gray-100 {
-            border-color: rgb(55 65 81 / var(--tw-border-opacity));
+        .hero-text-color {
+            color: var(--hero-text);
         }
 
-        .dark .bg-gradient-to-br.from-blue-100.to-white {
-            background: linear-gradient(to bottom right, rgb(30 41 59), rgb(15 23 42));
+        .hero-text-light-color {
+            color: var(--hero-text-light);
         }
 
-        .dark .bg-blue-100 {
-            background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+        .hero-input {
+            background-color: var(--card-bg); /* Using card-bg for input for consistency */
+            color: var(--text-dark);
+            border-color: var(--primary-color);
         }
 
-        .dark .text-blue-800 {
-            color: rgb(147 197 253 / var(--tw-text-opacity));
+        .hero-button {
+            background: var(--primary-gradient);
         }
 
-        .dark .bg-gray-900 {
-            background-color: rgb(3 7 18 / var(--tw-bg-opacity));
+        .stats-section {
+            background-color: var(--card-bg);
+            box-shadow: var(--card-shadow);
         }
 
-        .dark .glass {
-            background: rgba(31, 41, 55, 0.5);
-            border-color: rgba(55, 65, 81, 0.3);
+        .stats-count {
+            color: var(--primary-color);
         }
-        
+
+        .stats-label {
+            color: var(--text-light);
+        }
+
+        .why-choose-us-section {
+            background-color: var(--card-bg);
+        }
+
+        .why-choose-us-tag {
+            background-color: var(--primary-color);
+            color: var(--bg-color); /* Text color for tag should contrast with primary */
+        }
+
+        .why-choose-us-title {
+            color: var(--text-dark);
+        }
+
+        .why-choose-us-description {
+            color: var(--text-light);
+        }
+
+        .feature-card {
+            background-color: var(--section-bg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .feature-icon {
+            color: var(--primary-color);
+        }
+
+        .feature-title {
+            color: var(--text-dark);
+        }
+
+        .feature-description {
+            color: var(--text-light);
+        }
+
+        .services-section {
+            background-color: var(--section-bg);
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .service-icon {
+            background: linear-gradient(to bottom right, var(--primary-color), var(--primary-hover));
+            color: var(--bg-color); /* Icon color should contrast with primary */
+        }
+
+        .service-title {
+            color: var(--text-dark);
+        }
+
+        .service-description {
+            color: var(--text-light);
+        }
+
+        .service-details-link {
+            color: var(--primary-color);
+        }
+
+        .show-all-button {
+            background: linear-gradient(to right, var(--footer-bg), var(--footer-bg)); /* Use dark background for this button */
+            color: var(--footer-text);
+        }
+
+        .our-work-section {
+            background-color: var(--card-bg);
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-category {
+            background-color: var(--primary-color);
+            color: var(--bg-color); /* Text color for category should contrast with primary */
+        }
+
+        .project-title {
+            color: var(--text-dark);
+        }
+
+        .project-description {
+            color: var(--text-light);
+        }
+
+        .view-more-button {
+            background: linear-gradient(to right, var(--footer-bg), var(--footer-bg)); /* Use dark background for this button */
+            color: var(--footer-text);
+        }
+
+        .how-it-works-section {
+            background-color: var(--section-bg);
+        }
+
+        .connecting-line {
+            background: var(--primary-gradient);
+        }
+
+        .step-icon {
+            background: linear-gradient(to bottom right, var(--primary-color), var(--primary-hover));
+            color: var(--bg-color); /* Icon color should contrast with primary */
+        }
+
+        .step-title {
+            color: var(--text-dark);
+        }
+
+        .step-description {
+            color: var(--text-light);
+        }
+
+        .testimonials-section {
+            background: linear-gradient(to br, var(--primary-color), var(--primary-hover), var(--primary-color));
+        }
+
+        .testimonials-tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .testimonials-title {
+            background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.8));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .testimonials-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .testimonial-card {
+            background: var(--testimonial-bg);
+            border: 1px solid var(--testimonial-border);
+        }
+
+        .testimonial-card:hover {
+            background: var(--testimonial-hover-bg);
+            border-color: var(--testimonial-hover-border);
+        }
+
+        .testimonial-quote-icon {
+            color: var(--testimonial-quote-color);
+        }
+
+        .cta-section {
+            background-color: var(--cta-bg);
+            color: var(--cta-text);
+        }
+
+        .cta-title {
+            color: var(--cta-text);
+        }
+
+        .cta-description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-button-primary {
+            background: var(--primary-gradient);
+            color: #ffffff;
+        }
+
+        .cta-button-secondary {
+            background-color: var(--card-bg);
+            color: var(--text-dark);
+        }
+
+        .faq-section {
+            background-color: var(--faq-bg);
+        }
+
+        .faq-tag {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+        }
+
+        .faq-title {
+            color: var(--text-dark);
+        }
+
+        .faq-description {
+            color: var(--text-light);
+        }
+
+        .faq-item {
+            border-color: var(--faq-border);
+        }
+
+        .faq-question {
+            background-color: var(--faq-question-bg);
+            color: var(--text-dark);
+        }
+
+        .faq-question:hover {
+            background-color: var(--faq-question-hover-bg);
+        }
+
+        .faq-question-icon {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            background-color: var(--faq-answer-bg);
+            color: var(--text-light);
+        }
+
+        .footer-section {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+        }
+
+        .footer-logo-text {
+            color: var(--footer-text);
+        }
+
+        .footer-heading {
+            color: var(--footer-link-hover);
+        }
+
+        .footer-link {
+            color: var(--footer-text);
+        }
+
+        .footer-link:hover {
+            color: var(--footer-link-hover);
+        }
+
+        .social-icon-bg {
+            background-color: var(--input-bg); /* Using input-bg for social icons */
+        }
+
+        .social-icon-bg:hover {
+            background-color: var(--primary-color);
+        }
+
+        .social-icon-color {
+            color: var(--primary-color);
+        }
+
+        .social-icon-bg:hover .social-icon-color {
+            color: #ffffff;
+        }
+
         /* Logo styling */
         .header-logo {
             height: 3rem; /* 48px */
@@ -435,65 +789,62 @@
         /* --- END: LTR Adjustments for Header & General Layout --- */
     </style>
 </head>
-<body class="theme-blue bg-gray-50 text-gray-800 overflow-x-hidden">
+<body class="theme-gold bg-gray-50 text-gray-800 overflow-x-hidden">
     <!-- Header -->
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm transition-all duration-300">
+    <header class="header-bg backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3 space-x-reverse">
                 <!-- Updated Logo Image next to text -->
-                <img src="https://up6.cc/2025/07/175318853994541.png" alt="Moqawel Plus Logo" class="header-logo" style="height: 4rem; max-height: 5rem;">
+                <img src="https://up6.cc/2025/07/175318853994541.png" alt="Moqawel Plus Logo" class="header-logo">
                 <h1 class="text-2xl font-bold">
-                    <span class="text-gray-800 dark:text-gray-200" data-i18n="header.logo.part1">مقاول</span>
+                    <span class="text-gray-800" data-i18n="header.logo.part1">مقاول</span>
                     <span class="logo-gradient" data-i18n="header.logo.part2">بــلــس</span>
                 </h1>
             </div>
             <div class="flex items-center space-x-4 space-x-reverse">
                 <!-- Language Selector -->
                 <div class="relative">
-                    <select id="languageSelector" class="appearance-none bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-full pl-3 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer text-sm font-medium">
+                    <select id="languageSelector" class="appearance-none bg-gray-200 text-gray-700 rounded-full pl-3 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] cursor-pointer text-sm font-medium">
                         <option value="ar">العربية</option>
                         <option value="en">English</option>
                     </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <i class="fas fa-chevron-down text-xs"></i>
                     </div>
                 </div>
 
                 <!-- Theme Selector -->
-                <div class="relative">
-                    <select id="themeSelector" class="appearance-none bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-full pl-3 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer text-sm font-medium">
+                <div class="relative ml-4">
+                    <select id="themeSelector" class="appearance-none bg-gray-200 text-gray-700 rounded-full pl-3 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] cursor-pointer text-sm font-medium">
                         <option value="blue" data-i18n="header.themeSelector.blue"> أزرق</option>
                         <option value="gold" data-i18n="header.themeSelector.gold"> ذهبي</option>
                         <option value="pink" data-i18n="header.themeSelector.pink"> وردي</option>
                     </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <i class="fas fa-chevron-down text-xs"></i>
                     </div>
                 </div>
-                
-                <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-600">
-                    <i class="fas fa-moon dark:hidden hover:text-blue-500 transition-colors"></i>
-                    <i class="fas fa-sun hidden dark:block hover:text-yellow-400 transition-colors"></i>
-                </button>
             </div>
             
             <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-8 space-x-reverse">
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition flex items-center hover-underline-animation">
+                <a href="#hero" class="text-gray-700 hover:text-[var(--primary-color)] transition flex items-center hover-underline-animation">
                     <i class="fas fa-home ml-2"></i>
                     <span data-i18n="header.nav.home">الرئيسية</span>
                 </a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition flex items-center hover-underline-animation">
+                <a href="#services" class="text-gray-700 hover:text-[var(--primary-color)] transition flex items-center hover-underline-animation">
                     <i class="fas fa-hard-hat ml-2"></i>
+                    <span data-i18n="header.nav.services">خدماتنا</span>
+                </a>
+                <a href="#contact" class="text-gray-700 hover:text-[var(--primary-color)] transition flex items-center hover-underline-animation">
+                    <i class="fas fa-envelope ml-2"></i>
                     <span data-i18n="header.nav.contactUs">تواصل معنا</span>
                 </a>
-               
-               
-               <a id="about-link" href="about/about.html" class="text-gray-700 hover:text-blue-600 transition flex items-center hover-underline-animation">
+                <a id="about-link" href="about.html" class="text-gray-700 hover:text-[var(--primary-color)] transition flex items-center hover-underline-animation">
                     <i class="fas fa-info-circle ml-2"></i>
                     <span data-i18n="header.nav.aboutUs">من نحن</span>
                 </a>
-                <a id="login-link-desktop" href="login/login.html" class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-5 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-indigo-600 transition shadow-md hover:shadow-lg flex items-center">
+                <a id="login-link-desktop" href="login/login.html" onclick="window.location.href='login/login.html'; return false;" class="bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-hover)] text-white px-5 py-2 rounded-lg font-medium hover:from-[var(--primary-hover)] hover:to-[var(--primary-color)] transition shadow-md hover:shadow-lg flex items-center">
                     <i class="fas fa-sign-in-alt ml-2"></i>
                     <span data-i18n="header.nav.loginRegister">دخول / تسجيل جديد</span>
                 </a>
@@ -508,27 +859,23 @@
         <!-- Mobile Menu -->
         <div class="lg:hidden hidden bg-white shadow-lg rounded-b-lg" id="mobileMenu">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-                <a href="#" class="hover:text-blue-600 transition flex items-center py-2 border-b border-gray-100">
+                <a href="#hero" class="text-gray-700 hover:text-[var(--primary-color)] transition flex items-center py-2 border-b border-gray-100">
                     <i class="fas fa-home ml-2"></i>
                     <span data-i18n="header.nav.home">الرئيسية</span>
                 </a>
-                <a href="#" class="hover:text-blue-600 transition flex items-center py-2 border-b border-gray-100">
+                <a href="#services" class="text-gray-700 hover:text-[var(--primary-color)] transition flex items-center py-2 border-b border-gray-100">
                     <i class="fas fa-hard-hat ml-2"></i>
-                    <span data-i18n="header.mobileNav.contractors">المقاولون</span>
+                    <span data-i18n="header.nav.services">خدماتنا</span>
                 </a>
-                <a href="#" class="hover:text-blue-600 transition flex items-center py-2 border-b border-gray-100">
-                    <i class="fas fa-user-plus ml-2"></i>
-                    <span data-i18n="header.mobileNav.registerClient">تسجيل عميل</span>
+                <a href="#contact" class="text-gray-700 hover:text-[var(--primary-color)] transition flex items-center py-2 border-b border-gray-100">
+                    <i class="fas fa-envelope ml-2"></i>
+                    <span data-i18n="header.nav.contactUs">تواصل معنا</span>
                 </a>
-                <a href="#" class="hover:text-blue-600 transition flex items-center py-2 border-b border-gray-100">
-                    <i class="fas fa-tools ml-2"></i>
-                    <span data-i18n="header.mobileNav.registerContractor">تسجيل مقاول</span>
-                </a>
-                <a id="about-link-mobile" href="about/about.html" class="text-gray-700 hover:text-blue-600 transition flex items-center hover-underline-animation">
+                <a id="about-link-mobile" href="about.html" class="text-gray-700 hover:text-[var(--primary-color)] transition flex items-center py-2 border-b border-gray-100">
                     <i class="fas fa-info-circle ml-2"></i>
                     <span data-i18n="header.nav.aboutUs">من نحن</span>
                 </a>
-                <a id="login-link-mobile" href="login/login.html" class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-5 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-indigo-600 transition mt-2 flex items-center justify-center">
+                <a id="login-link-mobile" href="login/login.html" onclick="window.location.href='login/login.html'; return false;" class="bg-gradient-to-r from-[var(--primary-color)] to-[var(--primary-hover)] text-white px-5 py-2 rounded-lg font-medium hover:from-[var(--primary-hover)] hover:to-[var(--primary-color)] transition mt-2 flex items-center justify-center">
                     <i class="fas fa-sign-in-alt ml-2"></i>
                     <span data-i18n="header.mobileNav.login">دخول</span>
                 </a>
@@ -537,29 +884,33 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative h-screen min-h-[600px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+    <section class="hero-section relative h-screen min-h-[600px] overflow-hidden">
         <!-- Floating shapes -->
-        <div class="floating-shape w-64 h-64 bg-blue-500 top-20 right-20 animate-float"></div>
-        <div class="floating-shape w-80 h-80 bg-indigo-500 bottom-40 left-40 animate-float animation-delay-2000"></div>
-        <div class="floating-shape w-48 h-48 bg-purple-500 top-1/4 left-1/4 animate-float"></div>
-        <div class="floating-shape w-56 h-56 bg-blue-400 bottom-1/3 right-1/3 animate-float animation-delay-2000"></div>
+        <div class="floating-shape w-64 h-64 bg-blue-500/30 top-20 right-20 animate-float"></div>
+        <div class="floating-shape w-80 h-80 bg-indigo-500/30 bottom-40 left-40 animate-float animation-delay-2000"></div>
+        <div class="floating-shape w-48 h-48 bg-purple-500/30 top-1/4 left-1/4 animate-float"></div>
+        <div class="floating-shape w-56 h-56 bg-blue-400/30 bottom-1/3 right-1/3 animate-float animation-delay-2000"></div>
         
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/30"></div>
         
         <div class="container mx-auto px-4 h-full flex items-center relative z-10">
             <div class="max-w-2xl text-center mx-auto">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-300" data-i18n="hero.title.part1">ابحث عن أفضل المقاولين</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold hero-text-color mb-10 mt-8 leading-tight">
+                    <span class="hero-title-gradient" data-i18n="hero.title.part1">نفذ مشروعك بثقة</span>
                     <br>
-                    <span class="text-white/90 font-light tracking-wider" data-i18n="hero.title.part2">لمشروعك القادم</span>
+
+                    <span class="hero-text-light-color font-light tracking-wider" data-i18n="hero.title.part2">لمشروعك القادم</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-white/90 mb-8 tracking-wide" data-i18n="hero.description">
-                    نوفر لك أفضل المقاولين المحترفين في مختلف التخصصات لتحقيق رؤيتك بدقة وجودة عالية
+                <p class="text-xl md:text-2xl hero-text-light-color mb-8 tracking-wide" data-i18n="hero.description">
+                     فريقنا المتخصص يتولى تنفيذ أعمالك بدقة وجودة عالية، دون الحاجة للبحث عن مقاولين
                 </p>
                 
                 <div class="relative max-w-2xl mx-auto">
-                    <input type="text" id="serviceSearchInput" data-i18n-placeholder="hero.search.placeholder" placeholder="ما هي الخدمة التي تبحث عنها؟" class="w-full px-4 py-3 sm:px-6 sm:py-5 rounded-full shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800 text-right border-2 border-blue-400/30 hover:border-blue-400/50 transition-all duration-300 text-sm sm:text-base">
-                    <button id="serviceSearchButton" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-3 py-1.5 sm:px-6 sm:py-2.5 rounded-full hover:from-blue-600 hover:to-indigo-600 transition-all shadow-lg hover:shadow-blue-500/30 text-sm sm:text-base">
+                    <input type="text" id="serviceSearchInput" data-i18n-placeholder="hero.search.placeholder" placeholder="ما هي الخدمة التي تبحث عنها؟" class="hero-input w-full px-4 py-3 sm:px-6 sm:py-5 rounded-full shadow-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] text-right border-2 border-[var(--primary-color)]/30 hover:border-[var(--primary-color)]/50 transition-all duration-300 text-sm sm:text-base">
+                    <div id="searchResults" class="absolute z-10 w-full mt-2 bg-white rounded-lg shadow-lg hidden max-h-96 overflow-y-auto">
+                        <!-- Search results will appear here -->
+                    </div>
+                    <button id="serviceSearchButton" class="hero-button absolute left-2 top-1/2 transform -translate-y-1/2 text-white px-3 py-1.5 sm:px-6 sm:py-2.5 rounded-full hover:from-[var(--primary-hover)] hover:to-[var(--primary-color)] transition-all shadow-lg hover:shadow-[var(--primary-color)]/30 text-sm sm:text-base">
                         <i class="fas fa-search ml-2"></i>
                         <span data-i18n="hero.search.button">بحث</span>
                     </button>
@@ -570,7 +921,7 @@
                 
                 <div class="mt-8 flex justify-center space-x-4 space-x-reverse">
                     <div class="flex items-center">
-                        <span class="text-white/80 text-sm mr-3" data-i18n="hero.stats.clients">+10,000 عميل واثق</span>
+                        <span class="hero-text-light-color text-sm mr-3" data-i18n="hero.stats.clients">+10,000 عميل واثق</span>
                     </div>
                 </div>
             </div>
@@ -585,103 +936,205 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-12 bg-white shadow-md -mt-1 relative z-20">
+    <section class="stats-section py-12 -mt-1 relative z-20">
         <div class="container mx-auto px-4 relative z-10">
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
-                <div class="p-4 border-l md:border-l-0 md:border-r border-gray-200 last:border-r-0">
-                    <div class="text-3xl md:text-4xl font-bold mb-2 text-blue-600" data-i18n="stats.contractors.count">+500</div>
-                    <div class="text-gray-600" data-i18n="stats.contractors.label">مقاول محترف</div>
+                <div class="p-4 border-l md:border-l-0 md:border-r border-[var(--border-color)] last:border-r-0">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 stats-count" data-i18n="stats.contractors.count">+500</div>
+                    <div class="stats-label" data-i18n="stats.contractors.label">مهندس محترف</div>
                 </div>
-                <div class="p-4 border-l md:border-l-0 md:border-r border-gray-200 last:border-r-0">
-                    <div class="text-3xl md:text-4xl font-bold mb-2 text-blue-600" data-i18n="stats.projects.count">+2,000</div>
-                    <div class="text-gray-600" data-i18n="stats.projects.label">مشروع مكتمل</div>
+                <div class="p-4 border-l md:border-l-0 md:border-r border-[var(--border-color)] last:border-r-0">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 stats-count" data-i18n="stats.projects.count">+2,000</div>
+                    <div class="stats-label" data-i18n="stats.projects.label">مشروع مكتمل</div>
                 </div>
-                <div class="p-4 border-l md:border-l-0 md:border-r border-gray-200 last:border-r-0">
-                    <div class="text-3xl md:text-4xl font-bold mb-2 text-blue-600" data-i18n="stats.clients.count">+10,000</div>
-                    <div class="text-gray-600" data-i18n="stats.clients.label">عميل راضٍ</div>
+                <div class="p-4 border-l md:border-l-0 md:border-r border-[var(--border-color)] last:border-r-0">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 stats-count" data-i18n="stats.clients.count">+10,000</div>
+                    <div class="stats-label" data-i18n="stats.clients.label">عميل راضٍ</div>
                 </div>
-                <div class="p-4 border-l md:border-l-0 md:border-r border-gray-200 last:border-r-0">
-                    <div class="text-3xl md:text-4xl font-bold mb-2 text-blue-600" data-i18n="stats.satisfaction.percentage">95%</div>
-                    <div class="text-gray-600" data-i18n="stats.satisfaction.label">رضا العملاء</div>
+                <div class="p-4 border-l md:border-l-0 md:border-r border-[var(--border-color)] last:border-r-0">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 stats-count" data-i18n="stats.satisfaction.percentage">95%</div>
+                    <div class="stats-label" data-i18n="stats.satisfaction.label">رضا العملاء</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceSearchInput = document.getElementById('serviceSearchInput');
+            const searchResults = document.getElementById('searchResults');
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            // Function to filter and sort services
+            function filterServices(searchTerm) {
+                searchResults.innerHTML = '';
+                
+                if (searchTerm.length > 0) {
+                    // Convert NodeList to Array for sorting
+                    const cardsArray = Array.from(serviceCards);
+                    
+                    // Filter and sort by match position
+                    const matchedCards = cardsArray
+                        .map(card => {
+                            const title = card.querySelector('.service-title').textContent.toLowerCase();
+                            const description = card.querySelector('.service-description').textContent.toLowerCase();
+                            
+                            const titleMatchIndex = title.indexOf(searchTerm);
+                            const descMatchIndex = description.indexOf(searchTerm);
+                            
+                            return {
+                                card,
+                                title,
+                                description,
+                                titleMatchIndex,
+                                descMatchIndex,
+                                isTitleMatch: titleMatchIndex !== -1,
+                                isDescMatch: descMatchIndex !== -1
+                            };
+                        })
+                        .filter(item => item.isTitleMatch || item.isDescMatch)
+                        .sort((a, b) => {
+                            // Prioritize title matches over description matches
+                            if (a.isTitleMatch && !b.isTitleMatch) return -1;
+                            if (!a.isTitleMatch && b.isTitleMatch) return 1;
+                            
+                            // If both match in title, sort by match position
+                            if (a.isTitleMatch && b.isTitleMatch) {
+                                return a.titleMatchIndex - b.titleMatchIndex;
+                            }
+                            
+                            // If both match in description, sort by match position
+                            return a.descMatchIndex - b.descMatchIndex;
+                        });
+                    
+                    // Display sorted results
+                    matchedCards.forEach(item => {
+                        const resultItem = document.createElement('a');
+                        resultItem.href = '#';
+                        resultItem.className = 'block p-3 hover:bg-gray-100 transition';
+                        resultItem.innerHTML = `
+                            <div class="font-medium">${item.card.querySelector('.service-title').textContent}</div>
+                            <div class="text-sm text-gray-600">${item.card.querySelector('.service-description').textContent}</div>
+                        `;
+                        searchResults.appendChild(resultItem);
+                    });
+                    
+                    if (matchedCards.length > 0) {
+                        searchResults.classList.remove('hidden');
+                    } else {
+                        searchResults.innerHTML = '<div class="p-3 text-gray-500">لا توجد نتائج متطابقة</div>';
+                        searchResults.classList.remove('hidden');
+                    }
+                } else {
+                    searchResults.classList.add('hidden');
+                }
+            }
+
+            // Search on input with debounce
+            let searchTimeout;
+            serviceSearchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                const searchTerm = this.value.toLowerCase();
+                
+                // Show loading indicator if needed
+                // searchResults.innerHTML = '<div class="p-3 text-gray-500">جاري البحث...</div>';
+                // searchResults.classList.remove('hidden');
+                
+                searchTimeout = setTimeout(() => {
+                    filterServices(searchTerm);
+                }, 100); // Small delay for better performance
+            });
+
+            // Hide results when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!serviceSearchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                    searchResults.classList.add('hidden');
+                }
+            });
+
+            // Show results when input is focused
+            serviceSearchInput.addEventListener('focus', function() {
+                if (this.value.length > 0) {
+                    filterServices(this.value.toLowerCase());
+                }
+            });
+        });
+    </script>
+
     <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="py-16 bg-white">
+    <section id="why-choose-us" class="why-choose-us-section py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="whyChooseUs.heading.tag">لماذا نحن؟</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="whyChooseUs.heading.title">لماذا تختار مقاول بلس؟</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="whyChooseUs.heading.description">
+                <span class="inline-block why-choose-us-tag text-sm px-4 py-1 rounded-full mb-3" data-i18n="whyChooseUs.heading.tag">لماذا نحن؟</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 why-choose-us-title" data-i18n="whyChooseUs.heading.title">لماذا تختار مقاول بلس؟</h2>
+                <p class="why-choose-us-description max-w-2xl mx-auto" data-i18n="whyChooseUs.heading.description">
                     نحن نجمع بين الخبرة، الجودة، والابتكار لتقديم أفضل تجربة لعملائنا ومقاولينا.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Feature 1 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-4xl mb-4">
+                <div class="feature-card p-6 rounded-xl text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="feature-icon text-4xl mb-4">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature1.title">جودة موثوقة</h3>
-                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature1.description">
+                    <h3 class="font-bold text-xl mb-2 feature-title" data-i18n="whyChooseUs.feature1.title">جودة موثوقة</h3>
+                    <p class="feature-description text-sm" data-i18n="whyChooseUs.feature1.description">
                         نضمن لك الحصول على خدمات عالية الجودة من مقاولين معتمدين وذوي خبرة.
                     </p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-4xl mb-4">
+                <div class="feature-card p-6 rounded-xl text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="feature-icon text-4xl mb-4">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature2.title">سهولة الاستخدام</h3>
-                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature2.description">
+                    <h3 class="font-bold text-xl mb-2 feature-title" data-i18n="whyChooseUs.feature2.title">سهولة الاستخدام</h3>
+                    <p class="feature-description text-sm" data-i18n="whyChooseUs.feature2.description">
                         واجهة مستخدم بسيطة وسهلة تتيح لك العثور على ما تبحث عنه بسرعة.
                     </p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-4xl mb-4">
+                <div class="feature-card p-6 rounded-xl text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="feature-icon text-4xl mb-4">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature3.title">أمان وخصوصية</h3>
-                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature3.description">
+                    <h3 class="font-bold text-xl mb-2 feature-title" data-i18n="whyChooseUs.feature3.title">أمان وخصوصية</h3>
+                    <p class="feature-description text-sm" data-i18n="whyChooseUs.feature3.description">
                         نحمي بياناتك ومعلوماتك الشخصية بأعلى معايير الأمان والخصوصية.
                     </p>
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-4xl mb-4">
+                <div class="feature-card p-6 rounded-xl text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="feature-icon text-4xl mb-4">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature4.title">دعم فني متواصل</h3>
-                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature4.description">
+                    <h3 class="font-bold text-xl mb-2 feature-title" data-i18n="whyChooseUs.feature4.title">دعم فني متواصل</h3>
+                    <p class="feature-description text-sm" data-i18n="whyChooseUs.feature4.description">
                         فريق دعم مخصص لمساعدتك في أي وقت، لضمان تجربة سلسة.
                     </p>
                 </div>
 
                 <!-- Feature 5 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-4xl mb-4">
+                <div class="feature-card p-6 rounded-xl text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="feature-icon text-4xl mb-4">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature5.title">أسعار تنافسية</h3>
-                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature5.description">
+                    <h3 class="font-bold text-xl mb-2 feature-title" data-i18n="whyChooseUs.feature5.title">أسعار تنافسية</h3>
+                    <p class="feature-description text-sm" data-i18n="whyChooseUs.feature5.description">
                         نقدم أفضل الأسعار في السوق مع الحفاظ على جودة الخدمات المقدمة.
                     </p>
                 </div>
 
                 <!-- Feature 6 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-4xl mb-4">
+                <div class="feature-card p-6 rounded-xl text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="feature-icon text-4xl mb-4">
                         <i class="fas fa-users-cog"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature6.title">فريق عمل متخصص</h3>
-                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature6.description">
+                    <h3 class="font-bold text-xl mb-2 feature-title" data-i18n="whyChooseUs.feature6.title">فريق عمل متخصص</h3>
+                    <p class="feature-description text-sm" data-i18n="whyChooseUs.feature6.description">
                         فريق من الخبراء والمقاولين المتخصصين في جميع المجالات الإنشائية.
                     </p>
                 </div>
@@ -690,28 +1143,28 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50">
+    <section id="services" class="services-section py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="services.heading.tag">خدماتنا</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="services.heading.title">خدماتنا المتكاملة</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="services.heading.description">
+                <span class="inline-block why-choose-us-tag text-sm px-4 py-1 rounded-full mb-3" data-i18n="services.heading.tag">خدماتنا</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 why-choose-us-title" data-i18n="services.heading.title">خدماتنا المتكاملة</h2>
+                <p class="why-choose-us-description max-w-2xl mx-auto" data-i18n="services.heading.description">
                     نوفر مجموعة واسعة من الخدمات الإنشائية والتشطيبية لتلبية جميع احتياجاتك
                 </p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8" id="servicesContainer">
                 <!-- Service 1 - استشارة مقاول بلس -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card p-6 rounded-xl transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.consultation.title">استشارة مقاول بلس</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.consultation.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.consultation.title">استشارة مقاول بلس</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.consultation.description">
                         استشارات متخصصة في البناء والتشييد من خبراء معتمدين لمساعدتك في اتخاذ القرارات الصحيحة لمشروعك
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -719,16 +1172,16 @@
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card p-6 rounded-xl transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-couch"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.furniture.title">أثاث</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.furniture.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.furniture.title">أثاث</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.furniture.description">
                         تصنيع وتنفيذ الأثاث الخشبي والمعدني حسب الطلب وبأعلى معايير الجودة
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -736,16 +1189,16 @@
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card p-6 rounded-xl transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.electricity.title">كهرباء</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.electricity.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.electricity.title">كهرباء</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.electricity.description">
                         تركيب وصيانة التمديدات الكهربائية بكافة أنواعها مع ضمان الجودة والسلامة
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -753,16 +1206,16 @@
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card p-6 rounded-xl transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-faucet"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.plumbing.title">سباكة</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.plumbing.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.plumbing.title">سباكة</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.plumbing.description">
                         حلول متكاملة للسباكة المنزلية والتجارية مع استخدام أفضل المواد
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -770,16 +1223,16 @@
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-trowel"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.finishing.title">تشطيبات</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.finishing.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.finishing.title">تشطيبات</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.finishing.description">
                         أعمال التشطيب الداخلي والخارجي باحترافية عالية ووفق أحدث المواصفات
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -787,16 +1240,16 @@
                 </div>
                 
                 <!-- Service 6 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.construction.title">بناء</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.construction.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.construction.title">بناء</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.construction.description">
                         تنفيذ مشاريع البناء الكاملة بجودة عالية ووفق المخططات والمواصفات
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -804,16 +1257,16 @@
                 </div>
 
                 <!-- Service 7 - ديكورات -->
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-paint-roller"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.decorations.title">ديكورات</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.decorations.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.decorations.title">ديكورات</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.decorations.description">
                         تصميم وتنفيذ الديكورات الداخلية والخارجية باحترافية عالية وبأحدث التصاميم
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -821,16 +1274,16 @@
                 </div>
 
                 <!-- Service 8 - صيانة مكيفات -->
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-snowflake"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.ac_maintenance.title">صيانة مكيفات</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.ac_maintenance.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.ac_maintenance.title">صيانة مكيفات</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.ac_maintenance.description">
                         صيانة دورية وعلاج أعطال جميع أنواع المكيفات المنزلية والتجارية مع ضمان الجودة واستخدام قطع غيار أصلية
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -838,16 +1291,16 @@
                 </div>
 
                 <!-- Service 9 - مسابح -->
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-swimming-pool"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.pools.title">مسابح</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.pools.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.pools.title">مسابح</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.pools.description">
                         تصميم وبناء المسابح المنزلية والفنادقية مع أنظمة الترشيح والتعقيم الحديثة والصيانة الدورية
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -855,112 +1308,112 @@
                 </div>
 
                 <!-- Service 10 - تاجير العمالة -->
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.labor_rental.title">تاجير العمالة</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.labor_rental.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.labor_rental.title">تاجير العمالة</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.labor_rental.description">
                         توفير عمالة مدربة وماهرة في مختلف تخصصات البناء والتشييد مع ضمان الجودة والالتزام بالمواعيد
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
                 <!-- Additional services (hidden initially) -->
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d" style="display: none;">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-truck-loading"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.building_materials.title">مواد البناء</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.building_materials.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.building_materials.title">مواد البناء</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.building_materials.description">
                         توريد جميع مواد البناء من أسمنت وحديد وطوب وغيرها بأسعار تنافسية وجودة عالية
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.green_spaces.title">مساحات خضراء</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.green_spaces.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.green_spaces.title">مساحات خضراء</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.green_spaces.description">
                         تصميم وتنفيذ المساحات الخضراء والحدائق مع أنظمة الري الحديثة والصيانة الدورية
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.safety_security.title">السلامة والأمن</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.safety_security.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.safety_security.title">السلامة والأمن</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.safety_security.description">
                         تركيب أنظمة السلامة والأمن بما في ذلك كاميرات المراقبة وأنظمة الإنذار
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-broom"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.cleaning.title">تنظيف</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.cleaning.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.cleaning.title">تنظيف</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.cleaning.description">
                         خدمات تنظيف شاملة للمنازل والمكاتب والمرافق العامة باستخدام أحدث المعدات
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.center_maintenance.title">صيانة المراكز</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.center_maintenance.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.center_maintenance.title">صيانة المراكز</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.center_maintenance.description">
                         صيانة شاملة للمراكز التجارية والمباني الإدارية مع فريق متخصص
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
-                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                <div class="service-card hidden p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
                         <i class="fas fa-fence"></i>
                     </div>
-                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.fences.title">أسوار</h3>
-                    <p class="text-gray-600 text-center text-sm" data-i18n="service.fences.description">
+                    <h3 class="font-bold text-xl text-center mb-3 service-title" data-i18n="service.fences.title">أسوار</h3>
+                    <p class="service-description text-center text-sm" data-i18n="service.fences.description">
                         تصميم وتركيب الأسوار بأنواعها المختلفة (حديد، خشب، ألومنيوم) مع ضمان الجودة
                     </p>
                     <div class="mt-4 text-center">
-                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                        <a href="#" class="service-details-link text-sm font-medium inline-flex items-center">
                             <span data-i18n="service.details_button">عرض التفاصيل</span>
                             <i class="fas fa-chevron-left mr-1 text-xs"></i>
                         </a>
@@ -969,7 +1422,7 @@
             </div>
             
             <div class="text-center mt-12">
-                <button id="showAllServices" class="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-gray-800 text-white font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
+                <button id="showAllServices" class="show-all-button font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
                     <span data-i18n="services.showAll">عرض جميع الخدمات</span>
                     <i class="fas fa-chevron-left mr-2"></i>
                 </button>
@@ -987,216 +1440,115 @@
         </div>
     </section>
 
-    <!-- Featured Contractors -->
-    <section class="py-16 bg-white">
+    <!-- Our Work Section -->
+    <section id="our-work" class="our-work-section py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="contractors.heading.tag">المقاولون</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="contractors.heading.title">مقاولون مميزون</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="contractors.heading.description">
-                    تعرف على أفضل المقاولين الذين تم اختيارهم بعناية بناءً على تقييمات العملاء
+                <span class="inline-block why-choose-us-tag text-sm px-4 py-1 rounded-full mb-3" data-i18n="ourWork.heading.tag">أعمالنا</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 why-choose-us-title" data-i18n="ourWork.heading.title">أحدث أعمالنا</h2>
+                <p class="why-choose-us-description max-w-2xl mx-auto" data-i18n="ourWork.heading.description">
+                    تصفح بعض مشاريعنا المكتملة بنجاح
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-                <!-- Contractor 1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 card-3d">
-                    <div class="relative">
-                        <img src="https://tamkean.sa/wp-content/uploads/2023/12/C-01-High-res-768x550.jpg" alt="Contractor Work" class="w-full h-48 object-cover">
-                        <div class="absolute -bottom-6 right-6 w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU9epBUIqSZnJG1blQ2ZRw64i9mRq_r5ShWA&s" alt="Contractor" class="w-full h-full object-cover">
-                        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Project 1" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
-                    <div class="p-6 pt-10">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="font-bold text-xl" data-i18n="contractor.name.tamkean"> تمكين للتطوير العقاري</h3>
-                                <div class="flex items-center mt-1">
-                                    <div class="flex text-yellow-400 text-sm">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span class="text-gray-500 text-sm mr-1">(48 <span data-i18n="contractor.reviews">تقييم</span>)</span>
-                                </div>
-                            </div>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" data-i18n="contractor.status.available">متاح الآن</span>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.decorations.title">ديكورات</span>
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.furniture.title">أثاث</span>
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1">غرف نوم</span>
-                        </div>
-                        
-                        <p class="text-gray-600 mb-4 flex items-center text-sm">
-                            <i class="fas fa-map-marker-alt text-blue-500 ml-1"></i>
-                            <span data-i18n="contractor.location.riyadh_jeddah_dammam">الرياض، جدة، الدمام</span>
+                    <div class="p-6">
+                        <span class="inline-block project-category text-xs px-2 py-1 rounded-full mb-2" data-i18n="project1.category">بناء</span>
+                        <h3 class="font-bold text-xl mb-2 project-title" data-i18n="project1.title">فيلا حديثة</h3>
+                        <p class="project-description text-sm" data-i18n="project1.description">
+                            تصميم وتنفيذ فيلا حديثة بمساحة 400 م²
                         </p>
-                        
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                            <span class="text-gray-500 text-sm" data-i18n="contractor.started_work_since">بدأ العمل منذ:</span> 2015
-                            <button class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow hover:shadow-md flex items-center">
-                                <span data-i18n="contractor.view_profile">عرض الملف</span>
-                                <i class="fas fa-chevron-left mr-1 text-xs"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
-                
-                <!-- Contractor 2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 card-3d">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Contractor Work" class="w-full h-48 object-cover">
-                        <div class="absolute -bottom-6 right-6 w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg">
-                            <img src="https://sunrisegraphics.org/wp-content/uploads/2023/12/Screenshot-2024-06-30-at-10-37-33-%D8%A5%D8%B4%D8%B1%D8%A7%D9%82-%D9%84%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85-Behance.png" alt="Contractor" class="w-full h-full object-cover">
-                        </div>
+
+                <!-- Project 2 -->
+                <div class="project-card rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace" alt="Project 2" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
-                    <div class="p-6 pt-10">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="font-bold text-xl" data-i18n="contractor.name.diyark">ديارك للتطوير العقاري</h3>
-                                <div class="flex items-center mt-1">
-                                    <div class="flex text-yellow-400 text-sm">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <span class="text-gray-500 text-sm mr-1">(36 <span data-i18n="contractor.reviews">تقييم</span>)</span>
-                                </div>
-                            </div>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" data-i18n="contractor.status.available">متاح الآن</span>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.electricity.title">كهرباء</span>
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.plumbing.title">سباكة</span>
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1">عزل</span>
-                        </div>
-                        
-                        <p class="text-gray-600 mb-4 flex items-center text-sm">
-                            <i class="fas fa-map-marker-alt text-blue-500 ml-1"></i>
-                            <span data-i18n="contractor.location.riyadh_makkah_madinah">الرياض، مكة، المدينة</span>
+                    <div class="p-6">
+                        <span class="inline-block project-category text-xs px-2 py-1 rounded-full mb-2" data-i18n="project2.category">تشطيب</span>
+                        <h3 class="font-bold text-xl mb-2 project-title" data-i18n="project2.title">تشطيب شقة</h3>
+                        <p class="project-description text-sm" data-i18n="project2.description">
+                            تشطيب كامل لشقة بمساحة 150 م² بأحدث التصاميم
                         </p>
-                        
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                            <span class="text-gray-500 text-sm" data-i18n="contractor.started_work_since">بدأ العمل منذ:</span> 2018
-                            <button class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow hover:shadow-md flex items-center">
-                                <span data-i18n="contractor.view_profile">عرض الملف</span>
-                                <i class="fas fa-chevron-left mr-1 text-xs"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
-                
-                <!-- Contractor 3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 card-3d">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Contractor Work" class="w-full h-48 object-cover">
-                        <div class="absolute -bottom-6 right-6 w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg">
-                            <div class="w-full h-full bg-white flex items-center justify-center p-2">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt-7sxPqCiE6TQklAVwWg8g8Q9DSW6FesVnQ&s" alt="Company Logo" class="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300">
-                            </div>
-                        </div>
+
+                <!-- Project 3 -->
+                <div class="project-card rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="Project 3" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
-                    <div class="p-6 pt-10">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="font-bold text-xl" data-i18n="contractor.name.meisan">شركة ميسان</h3>
-                                <div class="flex items-center mt-1">
-                                    <div class="flex text-yellow-400 text-sm">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <span class="text-gray-500 text-sm mr-1">(72 <span data-i18n="contractor.reviews">تقييم</span>)</span>
-                                </div>
-                            </div>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" data-i18n="contractor.status.available">متاح الآن</span>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.finishing.title">تشطيبات</span>
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1">دهانات</span>
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.decorations.title">ديكورات</span>
-                        </div>
-                        
-                        <p class="text-gray-600 mb-4 flex items-center text-sm">
-                            <i class="fas fa-map-marker-alt text-blue-500 ml-1"></i>
-                            <span data-i18n="contractor.location.jeddah_khobar_dammam">جدة، الخبر، الدمام</span>
+                    <div class="p-6">
+                        <span class="inline-block project-category text-xs px-2 py-1 rounded-full mb-2" data-i18n="project3.category">ديكورات</span>
+                        <h3 class="font-bold text-xl mb-2 project-title" data-i18n="project3.title">ديكور مكتب</h3>
+                        <p class="project-description text-sm" data-i18n="project3.description">
+                            تصميم وتنفيذ ديكور مكتب شركة بمساحة 300 م²
                         </p>
-                        
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                            <span class="text-gray-500 text-sm" data-i18n="contractor.started_work_since">بدأ العمل منذ:</span> 2012
-                            <button class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow hover:shadow-md flex items-center">
-                                <span data-i18n="contractor.view_profile">عرض الملف</span>
-                                <i class="fas fa-chevron-left mr-1 text-xs"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-12">
-                <button class="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-gray-800 text-white font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
-                    <span data-i18n="contractors.showAll">عرض جميع المقاولين</span>
+                <a href="works.html" class="view-more-button font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
+                    <span data-i18n="ourWork.viewMore">عرض المزيد</span>
                     <i class="fas fa-chevron-left mr-2"></i>
-                </button>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
-    <section class="py-16 bg-gray-50">
+    <section class="how-it-works-section py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="howItWorks.heading.tag">كيف تعمل</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="howItWorks.heading.title">كيف تعمل منصة مقاول بلس؟</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="howItWorks.heading.description">
-                    خطوات بسيطة تفصلك عن تحقيق مشروعك مع أفضل المقاولين المحترفين
+                <span class="inline-block why-choose-us-tag text-sm px-4 py-1 rounded-full mb-3" data-i18n="howItWorks.heading.tag">كيف تعمل</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 why-choose-us-title" data-i18n="howItWorks.heading.title">كيف تعمل منصة مقاول بلس؟</h2>
+                <p class="why-choose-us-description max-w-2xl mx-auto" data-i18n="howItWorks.heading.description">
+                    خطوات بسيطة تضمن لك تنفيذ مشروعك باحترافية من خلال فريق مقاول بلس المباشر
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
                 <!-- Connecting Line -->
-                <div class="hidden md:block absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 z-0"></div>
+                <div class="hidden md:block absolute top-1/4 left-0 right-0 h-1 connecting-line z-0"></div>
                 
                 <!-- Step 1 -->
                 <div class="relative z-10 text-center px-4">
-                    <div class="bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-hover)] text-white w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg hovered-element">
+                    <div class="step-icon w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg">
                         <span class="font-bold">1</span>
                     </div>
-                    <h3 class="font-bold text-xl mb-3" data-i18n="howItWorks.step1.title">اختر الخدمة المطلوبة</h3>
-                    <p class="text-gray-600" data-i18n="howItWorks.step1.description">
-                        تصفح قائمة الخدمات المتاحة واختر ما يناسب مشروعك من بين عشرات التخصصات المختلفة
+                    <h3 class="font-bold text-xl mb-3 step-title" data-i18n="howItWorks.step1.title">اختر الخدمة المطلوبة</h3>
+                    <p class="step-description" data-i18n="howItWorks.step1.description">
+                        تصفح قائمة الخدمات المتاحة واختر ما يناسب مشروعك من أعمال البناء، التشطيب، الترميم أو التصميم الداخلي
                     </p>
                 </div>
                 
                 <!-- Step 2 -->
                 <div class="relative z-10 text-center px-4">
-                    <div class="bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-hover)] text-white w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg">
+                    <div class="step-icon w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg">
                         <span class="font-bold">2</span>
                     </div>
-                    <h3 class="font-bold text-xl mb-3" data-i18n="howItWorks.step2.title">ابحث عن المقاول المناسب</h3>
-                    <p class="text-gray-600" data-i18n="howItWorks.step2.description">
-                        تصفح ملفات المقاولين واختر الأفضل بناءً على التقييمات والأعمال السابقة والسعر والخبرة
+                    <h3 class="font-bold text-xl mb-3 step-title" data-i18n="howItWorks.step2.title">طلب عرض السعر</h3>
+                    <p class="step-description" data-i18n="howItWorks.step2.description">
+                        أرسل طلبك عبر المنصة، وسيقوم فريقنا المختص بتحليل احتياجك وإعداد عرض سعر مفصل يشمل التكاليف والمراحل والمدة الزمنية
                     </p>
                 </div>
                 
                 <!-- Step 3 -->
                 <div class="relative z-10 text-center px-4">
-                    <div class="bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-hover)] text-white w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg">
+                    <div class="step-icon w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg">
                         <span class="font-bold">3</span>
                     </div>
-                    <h3 class="font-bold text-xl mb-3" data-i18n="howItWorks.step3.title">تواصل وابدأ المشروع</h3>
-                    <p class="text-gray-600" data-i18n="howItWorks.step3.description">
-                        تواصل مع المقاول مباشرة، حدد التفاصيل وابدأ مشروعك بكل سهولة ويسر مع ضمان الجودة
+                    <h3 class="font-bold text-xl mb-3 step-title" data-i18n="howItWorks.step3.title">وقّع العقد وابدأ التنفيذ</h3>
+                    <p class="step-description" data-i18n="howItWorks.step3.description">
+                        بعد موافقتك على العرض، نوقّع العقد ونبدأ تنفيذ المشروع من خلال فريق مقاول بلس بإشراف مباشر وضمان أعلى معايير الجودة
                     </p>
                 </div>
             </div>
@@ -1204,30 +1556,30 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="py-16 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 text-white relative overflow-hidden">
+    <section class="testimonials-section py-16 relative overflow-hidden">
         <!-- Decorative elements -->
         <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48L3N2Zz4=')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl"></div>
         <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-purple-500/10 blur-3xl"></div>
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <span class="inline-block bg-white/20 text-white text-sm px-4 py-1 rounded-full mb-3 font-medium tracking-wider" data-i18n="testimonials.heading.tag">آراء العملاء</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent" data-i18n="testimonials.heading.title">ماذا يقول عملاؤنا</h2>
-                <p class="text-white/90 max-w-2xl mx-auto text-lg" data-i18n="testimonials.heading.description">
+                <span class="inline-block testimonials-tag text-sm px-4 py-1 rounded-full mb-3 font-medium tracking-wider text-black" data-i18n="testimonials.heading.tag">آراء العملاء</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 testimonials-title text-black" data-i18n="testimonials.heading.title">ماذا يقول عملاؤنا</h2>
+                <p class="testimonials-description max-w-2xl mx-auto text-lg text-black" data-i18n="testimonials.heading.description">
                     آراء عملائنا الذين استفادوا من خدمات منصة مقاول بلس
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="glass bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl hover:bg-white/15 transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:-translate-y-1.5 hover:border-white/30">
+                <div class="testimonial-card glass p-8 rounded-2xl hover:bg-white/15 transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:-translate-y-1.5">
                     <div class="flex items-center mb-4">
                         <div class="w-16 h-16 rounded-full border-2 border-white overflow-hidden shadow">
                             <img src="https://sa.arabisklondon.com/wp-content/uploads/2024/04/IMG_1035-jpeg-e1712100725504-1.webp" alt="Client" class="w-full h-full object-cover">
                         </div>
                         <div class="mr-4">
-                            <h4 class="font-bold" data-i18n="testimonial.amal.name">أمل محمد</h4>
+                            <h4 class="font-bold text-white" data-i18n="testimonial.amal.name">أمل محمد</h4>
                             <div class="flex text-yellow-300 text-sm">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -1237,20 +1589,20 @@
                             </div>
                         </div>
                     </div>
-                    <p class="italic relative pl-4">
-                        <i class="fas fa-quote-left text-white/20 absolute right-0 top-0 text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    <p class="italic relative pl-4 text-white">
+                        <i class="fas fa-quote-left testimonial-quote-icon absolute right-0 top-0 text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
                         <span data-i18n="testimonial.amal.quote">"منصة رائعة ساعدتني في العثور على مقاول محترف لتجديد شقتي. كانت الخدمة ممتازة والسعر مناسب. المقاول كان دقيقًا في المواعيد وجودة العمل تفوق التوقعات. شكرًا لكم على هذه المنصة المميزة!"</span>
                     </p>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="glass bg-white/15 backdrop-blur-lg border border-white/30 p-8 rounded-2xl hover:bg-white/20 transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <div class="testimonial-card glass p-8 rounded-2xl hover:bg-white/15 transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     <div class="flex items-center mb-4">
                         <div class="w-16 h-16 rounded-full border-2 border-white overflow-hidden shadow">
                             <img src="https://tessutiitaliano.com/wp-content/uploads/2020/08/What-are-the-Saudi-traditional-dress--1200x900.jpg" alt="Client" class="w-full h-full object-cover">
                         </div>
                         <div class="mr-4">
-                            <h4 class="font-bold" data-i18n="testimonial.khalid.name">خالد عبدالله</h4>
+                            <h4 class="font-bold text-white" data-i18n="testimonial.khalid.name">خالد عبدالله</h4>
                             <div class="flex text-yellow-300 text-sm">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -1260,8 +1612,8 @@
                             </div>
                         </div>
                     </div>
-                    <p class="italic relative pl-4">
-                        <i class="fas fa-quote-left text-white/20 absolute right-0 top-0 text-2xl"></i>
+                    <p class="italic relative pl-4 text-white">
+                        <i class="fas fa-quote-left testimonial-quote-icon absolute right-0 top-0 text-2xl"></i>
                         <span data-i18n="testimonial.khalid.quote">"استخدمت المنصة للعثور على مقاول كهرباء لمكتبي الجديد. كانت التجربة سلسة والمقاول كان محترفًا جدًا. تم تنفيذ العمل في الوقت المحدد وبأعلى معايير الجودة. سأستخدم المنصة بالتأكيد لمشاريعي القادمة وأوصي بها للجميع."</span>
                     </p>
                 </div>
@@ -1270,22 +1622,22 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gray-900 text-white relative overflow-hidden">
+    <section class="cta-section py-16 relative overflow-hidden">
         <!-- Decorative elements -->
         <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-indigo-500/10 blur-3xl"></div>
         
         <div class="container mx-auto px-4 text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="cta.title">هل أنت مستعد لبدء مشروعك؟</h2>
-            <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto" data-i18n="cta.description">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 cta-title" data-i18n="cta.title">هل أنت مستعد لبدء مشروعك؟</h2>
+            <p class="text-xl cta-description mb-8 max-w-2xl mx-auto" data-i18n="cta.description">
                 انضم إلى آلاف العملاء الذين وجدوا المقاول المثالي لمشاريعهم من خلال منصتنا
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-                <button class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center justify-center">
+                <button class="cta-button-primary hover:from-[var(--primary-hover)] hover:to-[var(--primary-color)] font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center justify-center">
                     <i class="fas fa-hard-hat ml-2"></i>
                     <span data-i18n="cta.button.registerContractor">تسجيل مقاول</span>
                 </button>
-                <button class="bg-white text-gray-900 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center justify-center">
+                <button class="cta-button-secondary hover:bg-[var(--faq-question-hover-bg)] font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center justify-center">
                     <i class="fas fa-user-plus ml-2"></i>
                     <span data-i18n="cta.button.registerClient">تسجيل عميل</span>
                 </button>
@@ -1294,64 +1646,64 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-16 bg-white">
+    <section class="faq-section py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="faq.heading.tag">الأسئلة الشائعة</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="faq.heading.title">أسئلة متكررة</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="faq.heading.description">
+                <span class="inline-block why-choose-us-tag text-sm px-4 py-1 rounded-full mb-3" data-i18n="faq.heading.tag">الأسئلة الشائعة</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 faq-title" data-i18n="faq.heading.title">أسئلة متكررة</h2>
+                <p class="faq-description max-w-2xl mx-auto" data-i18n="faq.heading.description">
                     أجوبة على أكثر الأسئلة التي تردنا من عملائنا
                 </p>
             </div>
             
             <div class="max-w-3xl mx-auto">
                 <!-- FAQ Item 1 -->
-                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question flex justify-between items-center w-full text-right p-4 bg-gray-50 hover:bg-gray-100 transition focus:outline-none">
-                        <span class="font-medium text-gray-800" data-i18n="faq.q1.question">كيف أضمن جودة عمل المقاول؟</span>
-                        <i class="fas fa-chevron-down text-blue-600 ml-2 transition-transform duration-300"></i>
+                <div class="mb-4 faq-item rounded-lg overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full text-right p-4 transition focus:outline-none">
+                        <span class="font-medium faq-title" data-i18n="faq.q1.question">كيف أضمن جودة عمل المقاول؟</span>
+                        <i class="fas fa-chevron-down faq-question-icon ml-2 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-answer p-4 text-gray-600 hidden bg-white">
+                    <div class="faq-answer p-4 hidden">
                         <p data-i18n="faq.q1.answer">جميع المقاولين في منصتنا يخضعون لمراجعة دقيقة قبل قبولهم، كما أننا نعرض تقييمات العملاء السابقين لكل مقاول. بالإضافة إلى ذلك، نقدم ضمانًا لمدة 3 أشهر على جميع الأعمال المنفذة من خلال المنصة.</p>
                     </div>
                 </div>
                 
                 <!-- FAQ Item 2 -->
-                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question flex justify-between items-center w-full text-right p-4 bg-gray-50 hover:bg-gray-100 transition focus:outline-none">
-                        <span class="font-medium text-gray-800" data-i18n="faq.q2.question">ما هي طريقة الدفع المتاحة؟</span>
-                        <i class="fas fa-chevron-down text-blue-600 ml-2 transition-transform duration-300"></i>
+                <div class="mb-4 faq-item rounded-lg overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full text-right p-4 transition focus:outline-none">
+                        <span class="font-medium faq-title" data-i18n="faq.q2.question">ما هي طريقة الدفع المتاحة؟</span>
+                        <i class="fas fa-chevron-down faq-question-icon ml-2 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-answer p-4 text-gray-600 hidden bg-white">
+                    <div class="faq-answer p-4 hidden">
                         <p data-i18n="faq.q2.answer">يمكنك الدفع عبر التحويل البنكي، كما نقدم خيار الدفع الإلكتروني عبر المنصة لحماية حقوق جميع الأطراف. يتم تحويل المبلغ للمقاول بعد إتمام العمل ورضاك عنه.</p>
                     </div>
                 </div>
                 
                 <!-- FAQ Item 3 -->
-                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question flex justify-between items-center w-full text-right p-4 bg-gray-50 hover:bg-gray-100 transition focus:outline-none">
-                        <span class="font-medium text-gray-800" data-i18n="faq.q3.question">هل يمكنني طلب تعديلات أثناء التنفيذ؟</span>
-                        <i class="fas fa-chevron-down text-blue-600 ml-2 transition-transform duration-300"></i>
+                <div class="mb-4 faq-item rounded-lg overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full text-right p-4 transition focus:outline-none">
+                        <span class="font-medium faq-title" data-i18n="faq.q3.question">هل يمكنني طلب تعديلات أثناء التنفيذ؟</span>
+                        <i class="fas fa-chevron-down faq-question-icon ml-2 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-answer p-4 text-gray-600 hidden bg-white">
+                    <div class="faq-answer p-4 hidden">
                         <p data-i18n="faq.q3.answer">نعم، يمكنك طلب تعديلات أثناء التنفيذ بعد الاتفاق مع المقاول على التكلفة الإضافية والوقت اللازم. ننصح دائمًا بوضع جميع التفاصيل في العقد المبدئي لتجنب أي سوء تفاهم.</p>
                     </div>
                 </div>
                 
                 <!-- FAQ Item 4 -->
-                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question flex justify-between items-center w-full text-right p-4 bg-gray-50 hover:bg-gray-100 transition focus:outline-none">
-                        <span class="font-medium text-gray-800" data-i18n="faq.q4.question">كيف أتأكد من التزام المقاول بالمواعيد؟</span>
-                        <i class="fas fa-chevron-down text-blue-600 ml-2 transition-transform duration-300"></i>
+                <div class="mb-4 faq-item rounded-lg overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full text-right p-4 transition focus:outline-none">
+                        <span class="font-medium faq-title" data-i18n="faq.q4.question">كيف أتأكد من التزام المقاول بالمواعيد؟</span>
+                        <i class="fas fa-chevron-down faq-question-icon ml-2 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-answer p-4 text-gray-600 hidden bg-white">
+                    <div class="faq-answer p-4 hidden">
                         <p data-i18n="faq.q4.answer">نحن نتابع مع المقاولين التزامهم بالمواعيد المتفق عليها، كما يمكنك متابعة تقدم العمل عبر المنصة. في حال تأخر المقاول بدون مبرر، يمكنك التواصل مع فريق الدعم لمساعدتك في حل المشكلة.</p>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-8">
-                <button class="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-gray-800 text-white font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
+                <button class="show-all-button font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
                     <span data-i18n="faq.showMore">عرض المزيد من الأسئلة</span>
                     <i class="fas fa-chevron-left mr-2"></i>
                 </button>
@@ -1360,76 +1712,575 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="footer-section py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center mb-4">
                         <img src="https://up6.cc/2025/07/175318853994541.png" alt="مقاول بلس" class="h-12 w-32 object-contain">
-                        <h3 class="mr-3 text-xl font-bold">مقاول بلس</h3>
+                        <h3 class="mr-3 text-xl font-bold footer-logo-text" data-i18n="footer.logo">مقاول بلس</h3>
                     </div>
-                    <p class="text-gray-400" data-i18n="footer.company">شركة رائدة في مجال البناء والتشييد بالمملكة العربية السعودية، نقدم حلولاً متكاملة بمعايير عالمية.</p>
+                    <p class="footer-link text-white" data-i18n="footer.company">شركة رائدة في مجال البناء والتشييد بالمملكة العربية السعودية، نقدم حلولاً متكاملة بمعايير عالمية.</p>
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-bold mb-4" data-i18n="footer.quick_links">روابط سريعة</h4>
+                    <h4 class="text-lg font-bold mb-4 footer-heading" data-i18n="footer.quick_links">روابط سريعة</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white">الرئيسية</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white">من نحن</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white">خدماتنا</a></li>
-                        <li><a href="projects.html" class="text-gray-400 hover:text-white">مشاريعنا</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white">اتصل بنا</a></li>
+                        <li><a href="index.html" class="footer-link text-white" data-i18n="footer.link.home">الرئيسية</a></li>
+                        <li><a href="about.html" class="footer-link text-white" data-i18n="footer.link.aboutUs">من نحن</a></li>
+                        <li><a href="services.html" class="footer-link text-white" data-i18n="footer.link.services">خدماتنا</a></li>
+                        <li><a href="projects.html" class="footer-link text-white" data-i18n="footer.link.projects">مشاريعنا</a></li>
+                        <li><a href="contact.html" class="footer-link text-white" data-i18n="footer.link.contactUs">اتصل بنا</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">خدماتنا</h4>
+                    <h4 class="text-lg font-bold mb-4 footer-heading" data-i18n="footer.our_services">خدماتنا</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">البناء والتشييد</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">التصميم المعماري</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">التشطبات الداخلية</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">الصيانة والتجديد</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">إدارة المشاريع</a></li>
+                        <li><a href="#" class="footer-link text-white" data-i18n="footer.service.construction">البناء والتشييد</a></li>
+                        <li><a href="#" class="footer-link text-white" data-i18n="footer.service.architecturalDesign">التصميم المعماري</a></li>
+                        <li><a href="#" class="footer-link text-white" data-i18n="footer.service.interiorFinishing">التشطبات الداخلية</a></li>
+                        <li><a href="#" class="footer-link text-white" data-i18n="footer.service.maintenanceRenovation">الصيانة والتجديد</a></li>
+                        <li><a href="#" class="footer-link text-white" data-i18n="footer.service.projectManagement">إدارة المشاريع</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">اتصل بنا</h4>
+                    <h4 class="text-lg font-bold mb-4 footer-heading" data-i18n="footer.contact_us">اتصل بنا</h4>
                     <div class="space-y-3">
                         <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 ml-2 text-blue-400"></i>
-                            <span class="text-gray-400">الرياض، المملكة العربية السعودية</span>
+                            <i class="fas fa-map-marker-alt mt-1 ml-2 social-icon-color"></i>
+                            <span class="footer-link text-white" data-i18n="footer.address">الرياض، المملكة العربية السعودية</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-phone ml-2 text-blue-400"></i>
-                            <span class="text-gray-400">+966 559006064</span>
+                            <i class="fas fa-phone ml-2 social-icon-color"></i>
+                            <span class="footer-link text-white" data-i18n="footer.phone">+966 559006064</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-envelope ml-2 text-blue-400"></i>
-                            <span class="text-gray-400">info@muqawil-plus.com</span>
+                            <i class="fas fa-envelope ml-2 social-icon-color"></i>
+                            <span class="footer-link text-white" data-i18n="footer.email">info@muqawil-plus.com</span>
                         </div>
                     </div>
                     <div class="flex space-x-3 space-x-reverse mt-4">
-                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="social-icon-bg hover:bg-[var(--primary-color)] w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-twitter social-icon-color hover:text-white"></i>
                         </a>
-                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="social-icon-bg hover:bg-[var(--primary-color)] w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f social-icon-color hover:text-white"></i>
                         </a>
-                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="social-icon-bg hover:bg-[var(--primary-color)] w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-linkedin-in social-icon-color hover:text-white"></i>
                         </a>
-                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="social-icon-bg hover:bg-[var(--primary-color)] w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram social-icon-color hover:text-white"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>© 2023 مقاول بلس. جميع الحقوق محفوظة.</p>
+            <div class="border-t border-[var(--border-color)] mt-12 pt-8 text-center footer-link">
+                <p class="text-white" data-i18n="footer.copyright">© 2023 مقاول بلس شركة ادفانسيد تيك سيستم. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
-        <!-- Decorative pattern -->
-        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZShBNDUpIi4+PHJlY3Qgd2lkdGg9IjIwIiBoZ
+
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // FAQ Accordion
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const faqAnswer = button.nextElementSibling;
+                    const icon = button.querySelector('.fas');
+
+                    faqAnswer.classList.toggle('hidden');
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                });
+            });
+
+            // Translation dictionary
+            const translations = {
+                'en': {
+                    'page.title': 'Moqawel Plus | Contractor Plus',
+                    'header.logo.part1': 'Contractor',
+                    'header.logo.part2': 'Plus',
+                    'header.themeSelector.blue': 'Blue',
+                    'header.themeSelector.gold': 'Gold',
+                    'header.themeSelector.pink': 'Pink',
+                    'header.nav.home': 'Home',
+                    'header.nav.services': 'Services',
+                    'header.nav.contactUs': 'Contact Us',
+                    'header.nav.aboutUs': 'About Us',
+                    'header.nav.loginRegister': 'Login / Register',
+                    'header.mobileNav.login': 'Login',
+                    'hero.title.part1': 'Execute Your Project with Confidence with Moqawel Plus',
+                    'hero.title.part2': 'For Your Next Project',
+                    'hero.description': 'Our specialized team handles your work with precision and high quality, without the need to search for contractors.',
+                    'hero.search.placeholder': 'What service are you looking for?',
+                    'hero.search.button': 'Search',
+                    'hero.stats.clients': '+10,000 Confident Clients',
+                    'stats.contractors.count': '+500',
+                    'stats.contractors.label': 'Professional Contractors',
+                    'stats.projects.count': '+2,000',
+                    'stats.projects.label': 'Completed Projects',
+                    'stats.clients.count': '+10,000',
+                    'stats.clients.label': 'Satisfied Clients',
+                    'stats.satisfaction.percentage': '95%',
+                    'stats.satisfaction.label': 'Customer Satisfaction',
+                    'whyChooseUs.heading.tag': 'Why Us?',
+                    'whyChooseUs.heading.title': 'Why Choose Moqawel Plus?',
+                    'whyChooseUs.heading.description': 'We combine expertise, quality, and innovation to provide the best experience for our clients and contractors.',
+                    'whyChooseUs.feature1.title': 'Reliable Quality',
+                    'whyChooseUs.feature1.description': 'We ensure you get high-quality services from certified and experienced contractors.',
+                    'whyChooseUs.feature2.title': 'Ease of Use',
+                    'whyChooseUs.feature2.description': 'A simple and easy-to-use interface that allows you to find what you are looking for quickly.',
+                    'whyChooseUs.feature3.title': 'Security & Privacy',
+                    'whyChooseUs.feature3.description': 'We protect your data and personal information with the highest standards of security and privacy.',
+                    'whyChooseUs.feature4.title': 'Continuous Technical Support',
+                    'whyChooseUs.feature4.description': 'A dedicated support team to assist you at any time, ensuring a smooth experience.',
+                    'whyChooseUs.feature5.title': 'Competitive Prices',
+                    'whyChooseUs.feature5.description': 'We offer the best prices in the market while maintaining the quality of services provided.',
+                    'whyChooseUs.feature6.title': 'Specialized Team',
+                    'whyChooseUs.feature6.description': 'A team of experts and contractors specialized in all construction fields.',
+                    'services.heading.tag': 'Our Services',
+                    'services.heading.title': 'Our Integrated Services',
+                    'services.heading.description': 'We provide a wide range of construction and finishing services to meet all your needs.',
+                    'service.consultation.title': 'Moqawel Plus Consultation',
+                    'service.consultation.description': 'Specialized consultations in building and construction from certified experts to help you make the right decisions for your project.',
+                    'service.furniture.title': 'Furniture',
+                    'service.furniture.description': 'Manufacturing and execution of wooden and metal furniture according to demand and with the highest quality standards.',
+                    'service.electricity.title': 'Electricity',
+                    'service.electricity.description': 'Installation and maintenance of all types of electrical extensions with quality and safety assurance.',
+                    'service.plumbing.title': 'Plumbing',
+                    'service.plumbing.description': 'Integrated solutions for residential and commercial plumbing with the use of the best materials.',
+                    'service.finishing.title': 'Finishing',
+                    'service.finishing.description': 'Interior and exterior finishing works with high professionalism and according to the latest specifications.',
+                    'service.construction.title': 'Construction',
+                    'service.construction.description': 'Execution of complete construction projects with high quality and according to plans and specifications.',
+                    'service.decorations.title': 'Decorations',
+                    'service.decorations.description': 'Design and implementation of interior and exterior decorations with high professionalism and the latest designs.',
+                    'service.ac_maintenance.title': 'AC Maintenance',
+                    'service.ac_maintenance.description': 'Periodic maintenance and troubleshooting of all types of residential and commercial air conditioners with quality assurance and use of original spare parts.',
+                    'service.pools.title': 'Swimming Pools',
+                    'service.pools.description': 'Design and construction of residential and hotel swimming pools with modern filtration and sterilization systems and periodic maintenance.',
+                    'service.labor_rental.title': 'Labor Rental',
+                    'service.labor_rental.description': 'Providing trained and skilled labor in various construction specialties with quality assurance and adherence to deadlines.',
+                    'service.building_materials.title': 'Building Materials',
+                    'service.building_materials.description': 'Supplying all building materials such as cement, iron, bricks, etc., at competitive prices and high quality.',
+                    'service.green_spaces.title': 'Green Spaces',
+                    'service.green_spaces.description': 'Design and implementation of green spaces and gardens with modern irrigation systems and periodic maintenance.',
+                    'service.safety_security.title': 'Safety and Security',
+                    'service.safety_security.description': 'Installation of safety and security systems including surveillance cameras and alarm systems.',
+                    'service.cleaning.title': 'Cleaning',
+                    'service.cleaning.description': 'Comprehensive cleaning services for homes, offices, and public facilities using the latest equipment.',
+                    'service.center_maintenance.title': 'Center Maintenance',
+                    'service.center_maintenance.description': 'Comprehensive maintenance for commercial centers and administrative buildings with a specialized team.',
+                    'service.fences.title': 'Fences',
+                    'service.fences.description': 'Design and installation of various types of fences (iron, wood, aluminum) with quality assurance.',
+                    'service.details_button': 'View Details',
+                    'services.showAll': 'Show All Services',
+                    'ourWork.heading.tag': 'Our Work',
+                    'ourWork.heading.title': 'Our Latest Works',
+                    'ourWork.heading.description': 'Browse some of our successfully completed projects.',
+                    'project1.category': 'Construction',
+                    'project1.title': 'Modern Villa',
+                    'project1.description': 'Design and execution of a modern villa with an area of 400 m²',
+                    'project2.category': 'Finishing',
+                    'project2.title': 'Apartment Finishing',
+                    'project2.description': 'Complete finishing of an apartment with an area of 150 m² with the latest designs.',
+                    'project3.category': 'Decorations',
+                    'project3.title': 'Office Decoration',
+                    'project3.description': 'Design and execution of a company office decoration with an area of 300 m².',
+                    'ourWork.viewMore': 'View More',
+                    'howItWorks.heading.tag': 'How It Works',
+                    'howItWorks.heading.title': 'How Moqawel Plus Platform Works?',
+                    'howItWorks.heading.description': 'Simple steps to ensure your project is executed professionally by Moqawel Plus direct team.',
+                    'howItWorks.step1.title': 'Choose the Required Service',
+                    'howItWorks.step1.description': 'Browse the list of available services and choose what suits your project from construction, finishing, renovation, or interior design works.',
+                    'howItWorks.step2.title': 'Request a Quote',
+                    'howItWorks.step2.description': 'Submit your request through the platform, and our specialized team will analyze your needs and prepare a detailed quote including costs, stages, and duration.',
+                    'howItWorks.step3.title': 'Sign the Contract and Start Execution',
+                    'howItWorks.step3.description': 'After your approval of the offer, we sign the contract and start executing the project through Moqawel Plus team with direct supervision and guarantee the highest quality standards.',
+                    'testimonials.heading.tag': 'Client Reviews',
+                    'testimonials.heading.title': 'What Our Clients Say',
+                    'testimonials.heading.description': 'Reviews from our clients who benefited from Moqawel Plus platform services.',
+                    'testimonial.amal.name': 'Amal Mohammed',
+                    'testimonial.amal.quote': '"A great platform that helped me find a professional contractor to renovate my apartment. The service was excellent and the price was suitable. The contractor was punctual and the quality of work exceeded expectations. Thank you for this distinguished platform!"',
+                    'testimonial.khalid.name': 'Khalid Abdullah',
+                    'testimonial.khalid.quote': '"I used the platform to find an electrical contractor for my new office. The experience was smooth and the contractor was very professional. The work was completed on time and with the highest quality standards. I will definitely use the platform for my future projects and recommend it to everyone."',
+                    'cta.title': 'Are You Ready to Start Your Project?',
+                    'cta.description': 'Join thousands of clients who found the perfect contractor for their projects through our platform.',
+                    'cta.button.registerContractor': 'Register as Contractor',
+                    'cta.button.registerClient': 'Register as Client',
+                    'faq.heading.tag': 'Frequently Asked Questions',
+                    'faq.heading.title': 'Frequent Questions',
+                    'faq.heading.description': 'Answers to the most common questions we receive from our clients.',
+                    'faq.q1.question': 'How do I ensure the quality of the contractor\'s work?',
+                    'faq.q1.answer': 'All contractors on our platform undergo a thorough review before acceptance, and we display previous client ratings for each contractor. In addition, we offer a 3-month warranty on all work performed through the platform.',
+                    'faq.q2.question': 'What are the available payment methods?',
+                    'faq.q2.answer': 'You can pay via bank transfer, and we also offer the option of electronic payment through the platform to protect the rights of all parties. The amount is transferred to the contractor after the completion of work and your satisfaction with it.',
+                    'faq.q3.question': 'Can I request modifications during execution?',
+                    'faq.q3.answer': 'Yes, you can request modifications during execution after agreeing with the contractor on the additional cost and required time. We always recommend including all details in the initial contract to avoid any misunderstanding.',
+                    'faq.q4.question': 'How do I ensure the contractor adheres to deadlines?',
+                    'faq.q4.answer': 'We follow up with contractors on their adherence to agreed-upon deadlines, and you can also track work progress through the platform. In case of contractor delay without justification, you can contact the support team to help you resolve the issue.',
+                    'faq.showMore': 'Show More Questions',
+                    'footer.logo': 'Moqawel Plus',
+                    'footer.company': 'A leading company in the field of building and construction in the Kingdom of Saudi Arabia, we provide integrated solutions with international standards.',
+                    'footer.quick_links': 'Quick Links',
+                    'footer.link.home': 'Home',
+                    'footer.link.aboutUs': 'About Us',
+                    'footer.link.services': 'Services',
+                    'footer.link.projects': 'Our Projects',
+                    'footer.link.contactUs': 'Contact Us',
+                    'footer.our_services': 'Our Services',
+                    'footer.service.construction': 'Building and Construction',
+                    'footer.service.architecturalDesign': 'Architectural Design',
+                    'footer.service.interiorFinishing': 'Interior Finishing',
+                    'footer.service.maintenanceRenovation': 'Maintenance and Renovation',
+                    'footer.service.projectManagement': 'Project Management',
+                    'footer.contact_us': 'Contact Us',
+                    'footer.address': 'Riyadh, Saudi Arabia',
+                    'footer.phone': '+966 559006064',
+                    'footer.email': 'info@muqawil-plus.com',
+                    'footer.copyright': '© 2023 Moqawel Plus. All rights reserved.',
+                },
+                'ar': {
+                    'page.title': 'مقاول بلس | Moqawel Plus',
+                    'header.logo.part1': 'مقاول',
+                    'header.logo.part2': 'بــلــس',
+                    'header.themeSelector.blue': 'أزرق',
+                    'header.themeSelector.gold': 'ذهبي',
+                    'header.themeSelector.pink': 'وردي',
+                    'header.nav.home': 'الرئيسية',
+                    'header.nav.services': 'خدماتنا',
+                    'header.nav.contactUs': 'تواصل معنا',
+                    'header.nav.aboutUs': 'من نحن',
+                    'header.nav.loginRegister': 'دخول / تسجيل جديد',
+                    'header.mobileNav.login': 'دخول',
+                    'hero.title.part1': 'نفذ مشروعك بثقة مع مقاول بلس',
+                    'hero.title.part2': 'لمشروعك القادم',
+                    'hero.description': 'فريقنا المتخصص يتولى تنفيذ أعمالك بدقة وجودة عالية، دون الحاجة للبحث عن مقاولين',
+                    'hero.search.placeholder': 'ما هي الخدمة التي تبحث عنها؟',
+                    'hero.search.button': 'بحث',
+                    'hero.stats.clients': '+10,000 عميل واثق',
+                    'stats.contractors.count': '+500',
+                    'stats.contractors.label': 'مقاول محترف',
+                    'stats.projects.count': '+2,000',
+                    'stats.projects.label': 'مشروع مكتمل',
+                    'stats.clients.count': '+10,000',
+                    'stats.clients.label': 'عميل راضٍ',
+                    'stats.satisfaction.percentage': '95%',
+                    'stats.satisfaction.label': 'رضا العملاء',
+                    'whyChooseUs.heading.tag': 'لماذا نحن؟',
+                    'whyChooseUs.heading.title': 'لماذا تختار مقاول بلس؟',
+                    'whyChooseUs.heading.description': 'نحن نجمع بين الخبرة، الجودة، والابتكار لتقديم أفضل تجربة لعملائنا ومقاولينا.',
+                    'whyChooseUs.feature1.title': 'جودة موثوقة',
+                    'whyChooseUs.feature1.description': 'نضمن لك الحصول على خدمات عالية الجودة من مقاولين معتمدين وذوي خبرة.',
+                    'whyChooseUs.feature2.title': 'سهولة الاستخدام',
+                    'whyChooseUs.feature2.description': 'واجهة مستخدم بسيطة وسهلة تتيح لك العثور على ما تبحث عنه بسرعة.',
+                    'whyChooseUs.feature3.title': 'أمان وخصوصية',
+                    'whyChooseUs.feature3.description': 'نحمي بياناتك ومعلوماتك الشخصية بأعلى معايير الأمان والخصوصية.',
+                    'whyChooseUs.feature4.title': 'دعم فني متواصل',
+                    'whyChooseUs.feature4.description': 'فريق دعم مخصص لمساعدتك في أي وقت، لضمان تجربة سلسة.',
+                    'whyChooseUs.feature5.title': 'أسعار تنافسية',
+                    'whyChooseUs.feature5.description': 'نقدم أفضل الأسعار في السوق مع الحفاظ على جودة الخدمات المقدمة.',
+                    'whyChooseUs.feature6.title': 'فريق عمل متخصص',
+                    'whyChooseUs.feature6.description': 'فريق من الخبراء والمقاولين المتخصصين في جميع المجالات الإنشائية.',
+                    'services.heading.tag': 'خدماتنا',
+                    'services.heading.title': 'خدماتنا المتكاملة',
+                    'services.heading.description': 'نوفر مجموعة واسعة من الخدمات الإنشائية والتشطيبية لتلبية جميع احتياجاتك',
+                    'service.consultation.title': 'استشارة مقاول بلس',
+                    'service.consultation.description': 'استشارات متخصصة في البناء والتشييد من خبراء معتمدين لمساعدتك في اتخاذ القرارات الصحيحة لمشروعك',
+                    'service.furniture.title': 'أثاث',
+                    'service.furniture.description': 'تصنيع وتنفيذ الأثاث الخشبي والمعدني حسب الطلب وبأعلى معايير الجودة',
+                    'service.electricity.title': 'كهرباء',
+                    'service.electricity.description': 'تركيب وصيانة التمديدات الكهربائية بكافة أنواعها مع ضمان الجودة والسلامة',
+                    'service.plumbing.title': 'سباكة',
+                    'service.plumbing.description': 'حلول متكاملة للسباكة المنزلية والتجارية مع استخدام أفضل المواد',
+                    'service.finishing.title': 'تشطيبات',
+                    'service.finishing.description': 'أعمال التشطيب الداخلي والخارجي باحترافية عالية ووفق أحدث المواصفات',
+                    'service.construction.title': 'بناء',
+                    'service.construction.description': 'تنفيذ مشاريع البناء الكاملة بجودة عالية ووفق المخططات والمواصفات',
+                    'service.decorations.title': 'ديكورات',
+                    'service.decorations.description': 'تصميم وتنفيذ الديكورات الداخلية والخارجية باحترافية عالية وبأحدث التصاميم',
+                    'service.ac_maintenance.title': 'صيانة مكيفات',
+                    'service.ac_maintenance.description': 'صيانة دورية وعلاج أعطال جميع أنواع المكيفات المنزلية والتجارية مع ضمان الجودة واستخدام قطع غيار أصلية',
+                    'service.pools.title': 'مسابح',
+                    'service.pools.description': 'تصميم وبناء المسابح المنزلية والفنادقية مع أنظمة الترشيح والتعقيم الحديثة والصيانة الدورية',
+                    'service.labor_rental.title': 'تاجير العمالة',
+                    'service.labor_rental.description': 'توفير عمالة مدربة وماهرة في مختلف تخصصات البناء والتشييد مع ضمان الجودة والالتزام بالمواعيد',
+                    'service.building_materials.title': 'مواد البناء',
+                    'service.building_materials.description': 'توريد جميع مواد البناء من أسمنت وحديد وطوب وغيرها بأسعار تنافسية وجودة عالية',
+                    'service.green_spaces.title': 'مساحات خضراء',
+                    'service.green_spaces.description': 'تصميم وتنفيذ المساحات الخضراء والحدائق مع أنظمة الري الحديثة والصيانة الدورية',
+                    'service.safety_security.title': 'السلامة والأمن',
+                    'service.safety_security.description': 'تركيب أنظمة السلامة والأمن بما في ذلك كاميرات المراقبة وأنظمة الإنذار',
+                    'service.cleaning.title': 'تنظيف',
+                    'service.cleaning.description': 'خدمات تنظيف شاملة للمنازل والمكاتب والمرافق العامة باستخدام أحدث المعدات',
+                    'service.center_maintenance.title': 'صيانة المراكز',
+                    'service.center_maintenance.description': 'صيانة شاملة للمراكز التجارية والمباني الإدارية مع فريق متخصص',
+                    'service.fences.title': 'أسوار',
+                    'service.fences.description': 'تصميم وتركيب الأسوار بأنواعها المختلفة (حديد، خشب، ألومنيوم) مع ضمان الجودة',
+                    'service.details_button': 'عرض التفاصيل',
+                    'services.showAll': 'عرض جميع الخدمات',
+                    'ourWork.heading.tag': 'أعمالنا',
+                    'ourWork.heading.title': 'أحدث أعمالنا',
+                    'ourWork.heading.description': 'تصفح بعض مشاريعنا المكتملة بنجاح',
+                    'project1.category': 'بناء',
+                    'project1.title': 'فيلا حديثة',
+                    'project1.description': 'تصميم وتنفيذ فيلا حديثة بمساحة 400 م²',
+                    'project2.category': 'تشطيب',
+                    'project2.title': 'تشطيب شقة',
+                    'project2.description': 'تشطيب كامل لشقة بمساحة 150 م² بأحدث التصاميم',
+                    'project3.category': 'ديكورات',
+                    'project3.title': 'ديكور مكتب',
+                    'project3.description': 'تصميم وتنفيذ ديكور مكتب شركة بمساحة 300 م²',
+                    'ourWork.viewMore': 'عرض المزيد',
+                    'howItWorks.heading.tag': 'كيف تعمل',
+                    'howItWorks.heading.title': 'كيف تعمل منصة مقاول بلس؟',
+                    'howItWorks.heading.description': 'خطوات بسيطة تضمن لك تنفيذ مشروعك باحترافية من خلال فريق مقاول بلس المباشر',
+                    'howItWorks.step1.title': 'اختر الخدمة المطلوبة',
+                    'howItWorks.step1.description': 'تصفح قائمة الخدمات المتاحة واختر ما يناسب مشروعك من أعمال البناء، التشطيب، الترميم أو التصميم الداخلي',
+                    'howItWorks.step2.title': 'طلب عرض السعر',
+                    'howItWorks.step2.description': 'أرسل طلبك عبر المنصة، وسيقوم فريقنا المختص بتحليل احتياجك وإعداد عرض سعر مفصل يشمل التكاليف والمراحل والمدة الزمنية',
+                    'howItWorks.step3.title': 'وقّع العقد وابدأ التنفيذ',
+                    'howItWorks.step3.description': 'بعد موافقتك على العرض، نوقّع العقد ونبدأ تنفيذ المشروع من خلال فريق مقاول بلس بإشراف مباشر وضمان أعلى معايير الجودة',
+                    'testimonials.heading.tag': 'آراء العملاء',
+                    'testimonials.heading.title': 'ماذا يقول عملاؤنا',
+                    'testimonials.heading.description': 'آراء عملائنا الذين استفادوا من خدمات منصة مقاول بلس',
+                    'testimonial.amal.name': 'أمل محمد',
+                    'testimonial.amal.quote': 'منصة رائعة ساعدتني في العثور على مقاول محترف لتجديد شقتي. كانت الخدمة ممتازة والسعر مناسب. المقاول كان دقيقًا في المواعيد وجودة العمل تفوق التوقعات. شكرًا لكم على هذه المنصة المميزة!',
+                    'testimonial.khalid.name': 'خالد عبدالله',
+                    'testimonial.khalid.quote': 'استخدمت المنصة للعثور على مقاول كهرباء لمكتبي الجديد. كانت التجربة سلسة والمقاول كان محترفًا جدًا. تم تنفيذ العمل في الوقت المحدد وبأعلى معايير الجودة. سأستخدم المنصة بالتأكيد لمشاريعي القادمة وأوصي بها للجميع.',
+                    'cta.title': 'هل أنت مستعد لبدء مشروعك؟',
+                    'cta.description': 'انضم إلى آلاف العملاء الذين وجدوا المقاول المثالي لمشاريعهم من خلال منصتنا',
+                    'cta.button.registerContractor': 'تسجيل مقاول',
+                    'cta.button.registerClient': 'تسجيل عميل',
+                    'faq.heading.tag': 'الأسئلة الشائعة',
+                    'faq.heading.title': 'أسئلة متكررة',
+                    'faq.heading.description': 'أجوبة على أكثر الأسئلة التي تردنا من عملائنا',
+                    'faq.q1.question': 'كيف أضمن جودة عمل المقاول؟',
+                    'faq.q1.answer': 'جميع المقاولين في منصتنا يخضعون لمراجعة دقيقة قبل قبولهم، كما أننا نعرض تقييمات العملاء السابقين لكل مقاول. بالإضافة إلى ذلك، نقدم ضمانًا لمدة 3 أشهر على جميع الأعمال المنفذة من خلال المنصة.',
+                    'faq.q2.question': 'ما هي طريقة الدفع المتاحة؟',
+                    'faq.q2.answer': 'يمكنك الدفع عبر التحويل البنكي، كما نقدم خيار الدفع الإلكتروني عبر المنصة لحماية حقوق جميع الأطراف. يتم تحويل المبلغ للمقاول بعد إتمام العمل ورضاك عنه.',
+                    'faq.q3.question': 'هل يمكنني طلب تعديلات أثناء التنفيذ؟',
+                    'faq.q3.answer': 'نعم، يمكنك طلب تعديلات أثناء التنفيذ بعد الاتفاق مع المقاول على التكلفة الإضافية والوقت اللازم. ننصح دائمًا بوضع جميع التفاصيل في العقد المبدئي لتجنب أي سوء تفاهم.',
+                    'faq.q4.question': 'كيف أتأكد من التزام المقاول بالمواعيد؟',
+                    'faq.q4.answer': 'نحن نتابع مع المقاولين التزامهم بالمواعيد المتفق عليها، كما يمكنك متابعة تقدم العمل عبر المنصة. في حال تأخر المقاول بدون مبرر، يمكنك التواصل مع فريق الدعم لمساعدتك في حل المشكلة.',
+                    'faq.showMore': 'عرض المزيد من الأسئلة',
+                    'footer.logo': 'مقاول بلس',
+                    'footer.company': 'شركة رائدة في مجال البناء والتشييد بالمملكة العربية السعودية، نقدم حلولاً متكاملة بمعايير عالمية.',
+                    'footer.quick_links': 'روابط سريعة',
+                    'footer.link.home': 'الرئيسية',
+                    'footer.link.aboutUs': 'من نحن',
+                    'footer.link.services': 'خدماتنا',
+                    'footer.link.projects': 'مشاريعنا',
+                    'footer.link.contactUs': 'اتصل بنا',
+                    'footer.our_services': 'خدماتنا',
+                    'footer.service.construction': 'البناء والتشييد',
+                    'footer.service.architecturalDesign': 'التصميم المعماري',
+                    'footer.service.interiorFinishing': 'التشطبات الداخلية',
+                    'footer.service.maintenanceRenovation': 'الصيانة والتجديد',
+                    'footer.service.projectManagement': 'إدارة المشاريع',
+                    'footer.contact_us': 'اتصل بنا',
+                    'footer.address': 'الرياض، المملكة العربية السعودية',
+                    'footer.phone': '+966 559006064',
+                    'footer.email': 'info@muqawil-plus.com',
+                    'footer.copyright': '© 2023 مقاول بلس شركة ادفانسيد تيك سيستم. جميع الحقوق محفوظة.',
+                }
+            };
+
+            // Language selector
+            const languageSelector = document.getElementById('languageSelector');
+            if (languageSelector) {
+                languageSelector.addEventListener('change', function() {
+                    const lang = this.value;
+                    document.documentElement.lang = lang;
+                    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                    
+                    // Update all translatable elements
+                    loadTranslations(lang);
+
+                    // Save preference to localStorage
+                    localStorage.setItem('preferredLang', lang);
+                });
+            }
+
+            // Function to load translations
+            function loadTranslations(lang) {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        el.textContent = translations[lang][key];
+                    }
+                });
+                
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    if (translations[lang] && translations[lang][key]) {
+                        el.setAttribute('placeholder', translations[lang][key]);
+                    }
+                });
+            }
+
+            // Theme selector
+            const themeSelector = document.getElementById('themeSelector');
+            if (themeSelector) {
+                themeSelector.addEventListener('change', function() {
+                    const theme = this.value;
+                    // Remove all theme classes first
+                    document.body.classList.remove('theme-blue', 'theme-gold', 'theme-pink');
+                    // Add selected theme class to body element
+                    document.body.classList.add(`theme-${theme}`);
+                    
+                    // Update CSS variables immediately
+                    updateThemeVariables(theme);
+                    
+                    // Save preference to localStorage
+                    localStorage.setItem('preferredTheme', theme);
+                });
+
+                // Function to update CSS variables based on theme
+                function updateThemeVariables(theme) {
+                    const root = document.documentElement;
+                    if (theme === 'blue') {
+                        root.style.setProperty('--primary-color', '#3b82f6');
+                        root.style.setProperty('--primary-gradient', 'linear-gradient(90deg, #3b82f6, #6366f1)');
+                        root.style.setProperty('--primary-hover', '#2563eb');
+                        root.style.setProperty('--text-color', '#1f2937');
+                        root.style.setProperty('--bg-color', '#f9fafb');
+                        root.style.setProperty('--header-bg', 'rgba(255, 255, 255, 0.9)');
+                        root.style.setProperty('--card-bg', '#ffffff');
+                        root.style.setProperty('--section-bg', '#f9fafb');
+                        root.style.setProperty('--text-light', '#6b7280');
+                        root.style.setProperty('--text-dark', '#1f2937');
+                        root.style.setProperty('--border-color', '#e5e7eb');
+                        root.style.setProperty('--input-bg', '#f3f4f6');
+                        root.style.setProperty('--input-text', '#4b5563');
+                        root.style.setProperty('--dropdown-bg', '#e5e7eb');
+                        root.style.setProperty('--dropdown-text', '#4b5563');
+                        root.style.setProperty('--footer-bg', '#111827');
+                        root.style.setProperty('--footer-text', '#9ca3af');
+                        root.style.setProperty('--footer-link-hover', '#ffffff');
+                        root.style.setProperty('--hero-bg-from', '#111827');
+                        root.style.setProperty('--hero-bg-via', '#1f2937');
+                        root.style.setProperty('--hero-bg-to', '#111827');
+                        root.style.setProperty('--hero-text', '#ffffff');
+                        root.style.setProperty('--hero-text-light', 'rgba(255, 255, 255, 0.9)');
+                        root.style.setProperty('--testimonial-bg', 'rgba(255, 255, 255, 0.1)');
+                        root.style.setProperty('--testimonial-border', 'rgba(255, 255, 255, 0.2)');
+                        root.style.setProperty('--testimonial-hover-bg', 'rgba(255, 255, 255, 0.15)');
+                        root.style.setProperty('--testimonial-hover-border', 'rgba(255, 255, 255, 0.3)');
+                        root.style.setProperty('--testimonial-quote-color', 'rgba(255, 255, 255, 0.2)');
+                        root.style.setProperty('--cta-bg', '#111827');
+                        root.style.setProperty('--cta-text', '#ffffff');
+                        root.style.setProperty('--faq-bg', '#f9fafb');
+                        root.style.setProperty('--faq-border', '#e5e7eb');
+                        root.style.setProperty('--faq-question-bg', '#f3f4f6');
+                        root.style.setProperty('--faq-question-hover-bg', '#e5e7eb');
+                        root.style.setProperty('--faq-answer-bg', '#ffffff');
+                    } else if (theme === 'gold') {
+                        root.style.setProperty('--primary-color', '#d4a017');
+                        root.style.setProperty('--primary-gradient', 'linear-gradient(90deg, #d4a017, #b8860b)');
+                        root.style.setProperty('--primary-hover', '#b8860b');
+                        root.style.setProperty('--text-color', '#374151');
+                        root.style.setProperty('--bg-color', '#fefce8');
+                        root.style.setProperty('--header-bg', 'rgba(255, 255, 232, 0.9)');
+                        root.style.setProperty('--card-bg', '#fffbf0');
+                        root.style.setProperty('--section-bg', '#fefce8');
+                        root.style.setProperty('--text-light', '#92400e');
+                        root.style.setProperty('--text-dark', '#374151');
+                        root.style.setProperty('--border-color', '#fde68a');
+                        root.style.setProperty('--input-bg', '#fffbeb');
+                        root.style.setProperty('--input-text', '#92400e');
+                        root.style.setProperty('--dropdown-bg', '#fcd34d');
+                        root.style.setProperty('--dropdown-text', '#92400e');
+                        root.style.setProperty('--footer-bg', '#422006');
+                        root.style.setProperty('--footer-text', '#5e3e0a'); /* Darker brown for contrast */
+                        root.style.setProperty('--footer-link-hover', '#fcd34d'); /* Brighter gold for hover */
+                        root.style.setProperty('--hero-bg-from', '#422006');
+                        root.style.setProperty('--hero-bg-via', '#573d0a');
+                        root.style.setProperty('--hero-bg-to', '#422006');
+                        root.style.setProperty('--hero-text', '#ffffff');
+                        root.style.setProperty('--hero-text-light', 'rgba(255, 255, 255, 0.9)');
+                        root.style.setProperty('--testimonial-bg', 'rgba(212, 160, 23, 0.5)');
+                        root.style.setProperty('--testimonial-border', 'rgba(184, 134, 11, 0.3)');
+                        root.style.setProperty('--testimonial-hover-bg', 'rgba(212, 160, 23, 0.6)');
+                        root.style.setProperty('--testimonial-hover-border', 'rgba(184, 134, 11, 0.4)');
+                        root.style.setProperty('--testimonial-quote-color', 'rgba(255, 255, 255, 0.1)');
+                        root.style.setProperty('--cta-bg', '#422006');
+                        root.style.setProperty('--cta-text', '#ffffff');
+                        root.style.setProperty('--faq-bg', '#fefce8');
+                        root.style.setProperty('--faq-border', '#fde68a');
+                        root.style.setProperty('--faq-question-bg', '#fffbeb');
+                        root.style.setProperty('--faq-question-hover-bg', '#fcd34d');
+                        root.style.setProperty('--faq-answer-bg', '#fffbf0');
+                    } else if (theme === 'pink') {
+                        root.style.setProperty('--primary-color', '#ec4899');
+                        root.style.setProperty('--primary-gradient', 'linear-gradient(90deg, #ec4899, #db2777)');
+                        root.style.setProperty('--primary-hover', '#db2777');
+                        root.style.setProperty('--text-color', '#4b5563');
+                        root.style.setProperty('--bg-color', '#fdf2f8');
+                        root.style.setProperty('--header-bg', 'rgba(253, 242, 248, 0.9)');
+                        root.style.setProperty('--card-bg', '#ffffff');
+                        root.style.setProperty('--section-bg', '#fdf2f8');
+                        root.style.setProperty('--text-light', '#be185d');
+                        root.style.setProperty('--text-dark', '#4b5563');
+                        root.style.setProperty('--border-color', '#fbcfe8');
+                        root.style.setProperty('--input-bg', '#fce7f3');
+                        root.style.setProperty('--input-text', '#be185d');
+                        root.style.setProperty('--dropdown-bg', '#fbcfe8');
+                        root.style.setProperty('--dropdown-text', '#be185d');
+                        root.style.setProperty('--footer-bg', '#831843');
+                        root.style.setProperty('--footer-text', '#fbcfe8');
+                        root.style.setProperty('--footer-link-hover', '#ffffff');
+                        root.style.setProperty('--hero-bg-from', '#831843');
+                        root.style.setProperty('--hero-bg-via', '#a32a63');
+                        root.style.setProperty('--hero-bg-to', '#831843');
+                        root.style.setProperty('--hero-text', '#ffffff');
+                        root.style.setProperty('--hero-text-light', 'rgba(255, 255, 255, 0.9)');
+                        root.style.setProperty('--testimonial-bg', 'rgba(236, 72, 153, 0.5)');
+                        root.style.setProperty('--testimonial-border', 'rgba(219, 39, 119, 0.3)');
+                        root.style.setProperty('--testimonial-hover-bg', 'rgba(236, 72, 153, 0.6)');
+                        root.style.setProperty('--testimonial-hover-border', 'rgba(219, 39, 119, 0.4)');
+                        root.style.setProperty('--testimonial-quote-color', 'rgba(255, 255, 255, 0.1)');
+                        root.style.setProperty('--cta-bg', '#831843');
+                        root.style.setProperty('--cta-text', '#ffffff');
+                        root.style.setProperty('--faq-bg', '#fdf2f8');
+                        root.style.setProperty('--faq-border', '#fbcfe8');
+                        root.style.setProperty('--faq-question-bg', '#fce7f3');
+                        root.style.setProperty('--faq-question-hover-bg', '#fbcfe8');
+                        root.style.setProperty('--faq-answer-bg', '#ffffff');
+                    }
+                    // Apply the background and text colors from the CSS variables
+                    document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color');
+                    document.body.style.color = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
+                }
+            }
+
+            // Load saved preferences on initial page load
+            const preferredLang = localStorage.getItem('preferredLang') || 'ar';
+            document.documentElement.lang = preferredLang;
+            document.documentElement.dir = preferredLang === 'ar' ? 'rtl' : 'ltr';
+            if (languageSelector) languageSelector.value = preferredLang;
+            loadTranslations(preferredLang);
+
+            // Set default theme to gold
+            const preferredTheme = localStorage.getItem('preferredTheme') || 'gold';
+            document.body.classList.add(`theme-${preferredTheme}`);
+            if (themeSelector) themeSelector.value = preferredTheme;
+            updateThemeVariables(preferredTheme); // Apply theme variables on load
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=ismailnuman/hooms" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>

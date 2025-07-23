@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-i18n-html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="about.title">من نحن - مقاول بلس</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend/i18nextHttpBackend.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        /* RTL/LTR support */
+        html[dir="rtl"] {
+            direction: rtl;
+        }
+        html[dir="ltr"] {
+            direction: ltr;
+        }
+        .rtl-support {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .ltr-support {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 50%;
+            top: 100%;
+            height: 20px;
+            width: 2px;
+            background: #3b82f6;
+        }
+
+        /* Dark mode classes */
+        .dark .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+        }
+        
+        .dark .bg-white {
+            background-color: #1f2937;
+        }
+        
+        .dark .bg-gray-100 {
+            background-color: #111827;
+        }
+        
+        /* Keep blue sections and white text consistent */
+        .bg-blue-600, .dark .bg-blue-600 {
+            background-color: #2563eb;
+        }
+        
+        .text-white, .dark .text-white {
+            color: #ffffff;
+        }
+        
+        .dark .text-gray-600, 
+        .dark .text-gray-700,
+        .dark .text-gray-800 {
+            color: #e5e7eb;
+        }
+        
+        .dark .bg-blue-50 {
+            background-color: #1e40af;
+        }
+        
+        .dark .bg-gray-700 {
+            background-color: #374151;
+        }
+        
+        .dark .border-gray-800 {
+            border-color: #374151;
+        }
+        
+        .dark .text-gray-400 {
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="dark:bg-gray-900 dark:text-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://up6.cc/2025/07/175318853994541.png" alt="مقاول بلس" class="h-20 w-56 object-contain hover:scale-105 transition-transform duration-200">
+                <h1 class="mr-3 text-xl font-bold text-blue-600">مقاول بلس</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-6 space-x-reverse">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600" data-i18n="nav.home">الرئيسية</a>
+                <a href="about.html" class="text-blue-600 font-medium" data-i18n="nav.about">من نحن</a>
+                <a href="services.html" class="text-gray-700 hover:text-blue-600" data-i18n="nav.services">خدماتنا</a>
+                <a href="projects.html" class="text-gray-700 hover:text-blue-600" data-i18n="nav.projects">مشاريعنا</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600" data-i18n="nav.contact">اتصل بنا</a>
+            </nav>
+            
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="relative group ml-4">
+                    <button class="flex items-center text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg" id="languageToggle">
+                        <i class="fas fa-globe ml-2"></i>
+                        <span id="currentLanguage">العربية</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute hidden right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-md shadow-lg z-10" id="languageDropdown">
+                        <a href="#" data-lang="ar" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center">
+                            <span class="ml-2">العربية</span>
+                        </a>
+                        <a href="#" data-lang="en" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center">
+                            <span class="ml-2">English</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="tel:+966500000000" class="hidden md:flex items-center text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-phone ml-2"></i>
+                    <span></span>
+                </a>
+                <button id="darkModeToggle" class="p-2 text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                <button class="md:hidden text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-white shadow-lg hidden" id="mobileMenu">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+            <a href="index.html" class="text-gray-700 hover:text-blue-600 py-2" data-i18n="nav.home"></a>
+            <a href="about.html" class="text-blue-600 font-medium py-2" data-i18n="nav.about"></a>
+            <a href="services.html" class="text-gray-700 hover:text-blue-600 py-2" data-i18n="nav.services"></a>
+            <a href="projects.html" class="text-gray-700 hover:text-blue-600 py-2" data-i18n="nav.projects"></a>
+            <a href="contact.html" class="text-gray-700 hover:text-blue-600 py-2" data-i18n="nav.contact"></a>
+            <a href="tel:+966500000000" class="flex items-center text-gray-700 hover:text-blue-600 py-2">
+                <i class="fas fa-phone ml-2"></i>
+                <span>+966 50 000 0000</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="about.title">من نحن</h1>
+          شركة مقاول بلس رائدة في مجال البناء والتشييد بالمملكة العربية السعودية</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:ml-10">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="فريق مقاول بلس" 
+                         class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6" data-i18n="about.story">قصتنا ورؤيتنا</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        تأسست شركة مقاول بلس في عام 2010 بهدف تقديم حلول بناء متكاملة بمعايير عالمية. ومنذ ذلك الحين، كبرنا لنصبح أحد أبرز مزودي خدمات البناء والتشييد في المملكة العربية السعودية.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        نؤمن بأن البناء ليس مجرد تشييد هياكل، بل هو صناعة بيوت تحكي قصصاً وخلق مجتمعات مزدهرة. لذلك نلتزم بأعلى معايير الجودة والسلامة في كل مشروع ننفذه.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="bg-blue-600 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-check-circle text-white ml-2"></i>
+                            <span class="text-white">جودة عالية</span>
+                        </div>
+                        <div class="bg-blue-600 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-check-circle text-white ml-2"></i>
+                            <span class="text-white">التزام بالمواعيد</span>
+                        </div>
+                        <div class="bg-blue-600 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-check-circle text-white ml-2"></i>
+                            <span class="text-white">أسعار تنافسية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-i18n="about.stats">أرقامنا تتحدث عنا</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-blue-600 text-4xl font-bold mb-2">+250</div>
+                    <div class="text-gray-600">مشروع مكتمل</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-blue-600 text-4xl font-bold mb-2">15</div>
+                    <div class="text-gray-600">جائزة وتكريم</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-blue-600 text-4xl font-bold mb-2">+120</div>
+                    <div class="text-gray-600">موظف محترف</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-blue-600 text-4xl font-bold mb-2">12</div>
+                    <div class="text-gray-600">سنة خبرة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">رحلة التميز</h2>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute right-1/2 top-0 h-full w-1 bg-blue-200"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-12">
+                    <!-- Item 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0 md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">تأسيس الشركة</h3>
+                                <p class="text-gray-600 leading-relaxed">بدأت رحلتنا بمشاريع صغيرة في مدينة الرياض، مع فريق مكون من 5 موظفين فقط.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 flex justify-center md:justify-start">
+                            <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center relative shadow-lg border-4 border-white">
+                                <span class="font-bold">2010</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:order-last md:pl-8 mb-6 md:mb-0 md:text-left">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-r-4 border-blue-600">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">أول مشروع سكني كبير</h3>
+                                <p class="text-gray-600 leading-relaxed">تنفيذ أول مشروع سكني متكامل بمساحة 10,000 متر مربع في مدينة جدة.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pr-8 flex justify-center md:justify-end">
+                            <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center relative shadow-lg border-4 border-white">
+                                <span class="font-bold">2013</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0 md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">التوسع الإقليمي</h3>
+                                <p class="text-gray-600 leading-relaxed">افتتاح فروع جديدة في الدمام والخبر، وتوسيع نطاق العمل ليشمل المشاريع التجارية.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 flex justify-center md:justify-start">
+                            <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center relative shadow-lg border-4 border-white">
+                                <span class="font-bold">2016</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:order-last md:pl-8 mb-6 md:mb-0 md:text-left">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-r-4 border-blue-600">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">الجوائز والتكريم</h3>
+                                <p class="text-gray-600 leading-relaxed">حصولنا على جائزة أفضل مقاول في المملكة للعام 2020 من قبل وزارة الإسكان.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pr-8 flex justify-center md:justify-end">
+                            <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center relative shadow-lg border-4 border-white">
+                                <span class="font-bold">2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">فريق القيادة</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://up6.cc/2025/07/175286177119231.jpg" 
+                         alt="الرائس التنفيذي" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">نعمان المقبل</h3>
+                        <p class="text-blue-600 mb-4">الرئيس التنفيذي</p>
+                        <p class="text-gray-600">رائيس كبار المهندسين بخبرة تزيد عن 20 عاماً في مجال البناء والتشييد، قاد العديد من المشاريع الكبرى في المملكة.</p>
+                        <div class="flex mt-4 space-x-3 space-x-reverse">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://up6.cc/2025/07/175326288984271.jpg" 
+                         alt="مدير تنفيذي" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">اسماعيل المقبل</h3>
+                        <p class="text-blue-600 mb-4">مدير تنفيذي</p>
+                        <p class="text-gray-600"> قيادة وتنفيذ مشاريع نوعية تجمع بين التصميم المعماري الفاخر والحلول التقنية،.</p>
+                        <div class="flex mt-4 space-x-3 space-x-reverse">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://up6.cc/2025/07/17532627705641.jpg" 
+                         alt="مدير التطوير" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">محمد سعد</h3>
+                        <p class="text-blue-600 mb-4">مدير تطوير</p>
+                        <p class="text-gray-600">خبير في أنظمة الجودة والسلامة، حاصل على شهادات عالمية في إدارة الجودة في مشاريع البناء.</p>
+                        <div class="flex mt-4 space-x-3 space-x-reverse">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-i18n="about.cta">هل لديك مشروع في ذهنك؟</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-i18n="فريقنا جاهز لتنفيذ مشروعك بأعلى معايير الاحترافية والدقة. تواصل معنا وابدأ خطوتك الأولى نحو النجاح.">فريقنا مستعد لمساعدتك في تحويل رؤيتك إلى واقع ملموس بأعلى معايير الجودة</p>
+            <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold inline-block hover:bg-gray-100 transition duration-300" data-i18n="about.cta_button">
+                اتصل بنا الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://up6.cc/2025/07/175318853994541.png" alt="مقاول بلس" class="h-12 w-32 object-contain">
+                        <h3 class="mr-3 text-xl font-bold">مقاول بلس</h3>
+                    </div>
+                    <p class="text-gray-400" data-i18n="footer.company">شركة رائدة في مجال البناء والتشييد بالمملكة العربية السعودية، نقدم حلولاً متكاملة بمعايير عالمية.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer.quick_links">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">من نحن</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white">خدماتنا</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white">مشاريعنا</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">خدماتنا</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">البناء والتشييد</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">التصميم المعماري</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">التشطبات الداخلية</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">الصيانة والتجديد</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">إدارة المشاريع</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">اتصل بنا</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 ml-2 text-blue-400"></i>
+                            <span class="text-gray-400">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone ml-2 text-blue-400"></i>
+                            <span class="text-gray-400">966559006064+</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope ml-2 text-blue-400"></i>
+                            <span class="text-gray-400">info@muqawil-plus.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3 space-x-reverse mt-4">
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2023 مقاول بلس شركة ادفانسيد تيك سيستم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced i18next configuration
+        i18next
+            .use(i18nextBrowserLanguageDetector)
+            .use(i18nextHttpBackend)
+            .init({
+                lng: localStorage.getItem('i18nextLng') || 'ar',
+                supportedLngs: ['ar', 'en'],
+                load: 'languageOnly',
+                nonExplicitSupportedLngs: true,
+                fallbackLng: 'ar',
+                debug: false,
+                detection: {
+                    order: ['localStorage'],
+                    caches: ['localStorage']
+                },
+                backend: {
+                    loadPath: '/locales/{{lng}}/{{ns}}.json'
+                },
+                resources: {
+                    ar: {
+                        translation: {
+                            "about.title": "من نحن - مقاول بلس",
+                            "nav.home": "الرئيسية",
+                            "nav.about": "من نحن",
+                            "nav.services": "خدماتنا",
+                            "nav.projects": "مشاريعنا",
+                            "nav.contact": "اتصل بنا",
+                            "about.story": "قصتنا ورؤيتنا",
+                            "about.stats": "أرقامنا تتحدث عنا",
+                            "about.journey": "رحلة التميز",
+                            "about.team": "فريق القيادة",
+                            "about.cta": "هل لديك مشروع في ذهنك؟",
+                            "about.cta_button": "اتصل بنا الآن",
+                            "footer.company": "شركة رائدة في مجال البناء والتشييد بالمملكة العربية السعودية، نقدم حلولاً متكاملة بمعايير عالمية.",
+                            "footer.quick_links": "روابط سريعة",
+                            "footer.services": "خدماتنا",
+                            "footer.contact": "اتصل بنا",
+                            "footer.address": "الرياض، المملكة العربية السعودية",
+                            "footer.copyright": "© 2023 مقاول بلس شركة ادفانسيد تيك سيستم. جميع الحقوق محفوظة."
+                        }
+                    },
+                    en: {
+                        translation: {
+                            "about.title": "About Us - Muqawil Plus",
+                            "nav.home": "Home",
+                            "nav.about": "About",
+                            "nav.services": "Services",
+                            "nav.projects": "Projects",
+                            "nav.contact": "Contact Us",
+                            "about.story": "Our Story & Vision",
+                            "about.stats": "Our Numbers Speak",
+                            "about.journey": "Excellence Journey",
+                            "about.team": "Leadership Team",
+                            "about.cta": "Do you have a project in mind?",
+                            "about.cta_button": "Contact Us Now",
+                            "footer.company": "A leading construction company in Saudi Arabia, providing integrated solutions with global standards.",
+                            "footer.quick_links": "Quick Links",
+                            "footer.services": "Our Services",
+                            "footer.contact": "Contact Us",
+                            "footer.address": "Riyadh, Saudi Arabia",
+                            "footer.copyright": "© 2023 Muqawil Plus. All rights reserved."
+                        }
+                    }
+                }
+            }, function(err, t) {
+                updateContent();
+            });
+
+        // Function to update content based on selected language
+        function updateContent() {
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.innerHTML = i18next.t(key);
+            });
+
+            // Update language switcher text
+            document.getElementById('currentLanguage').textContent = 
+                i18next.language === 'ar' ? 'العربية' : 'English';
+
+            // Update document language only (no direction changes)
+            document.documentElement.lang = i18next.language;
+        }
+
+        // Toggle language dropdown
+        document.getElementById('languageToggle').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.getElementById('languageDropdown').classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            document.getElementById('languageDropdown').classList.add('hidden');
+        });
+
+        // Language change handler
+        document.querySelectorAll('[data-lang]').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const lang = this.getAttribute('data-lang');
+                i18next.changeLanguage(lang, function(err, t) {
+                    if (err) return console.log('something went wrong loading', err);
+                    updateContent();
+                    localStorage.setItem('i18nextLng', lang);
+                    document.getElementById('languageDropdown').classList.add('hidden');
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('button:not(#darkModeToggle)').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Check for saved preference or system preference
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && prefersDarkScheme.matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=ismailnuman/from-us" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>

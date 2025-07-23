@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title data-i18n="page.title">مقاول بلس | Moqawel Plus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+        
+        /* Theme Styles */
+        .theme-blue {
+            --primary-color: #3b82f6;
+            --primary-gradient: linear-gradient(90deg, #3b82f6, #6366f1);
+            --primary-hover: #2563eb;
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+        }
+        
+        .theme-gold {
+            --primary-color: #d4a017;
+            --primary-gradient: linear-gradient(90deg, #d4a017, #b8860b);
+            --primary-hover: #b8860b;
+            --text-color: #374151;
+            --bg-color: #fefce8;
+        }
+        
+        .theme-pink {
+            --primary-color: #ec4899;
+            --primary-gradient: linear-gradient(90deg, #ec4899, #db2777);
+            --primary-hover: #db2777;
+            --text-color: #4b5563;
+            --bg-color: #fdf2f8;
+        }
+        
+        /* Dark mode styles */
+        .dark {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+            color: rgb(229 231 235 / var(--tw-text-opacity));
+        }
+        
+        .dark .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #818cf8);
+        }
+
+        .dark .bg-white\/90 {
+            background-color: rgba(31, 41, 55, 0.9);
+        }
+
+        .dark .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .bg-gray-200 {
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+        }
+
+        .dark .text-gray-700 {
+            color: rgb(209 213 219 / var(--tw-text-opacity));
+        }
+
+        .dark .border-gray-100 {
+            border-color: rgb(55 65 81 / var(--tw-border-opacity));
+        }
+
+        .dark .bg-gradient-to-r.from-gray-800.to-gray-900 {
+            background: linear-gradient(to right, rgb(31 41 55), rgb(17 24 39));
+        }
+
+        .dark .hover\:from-gray-900:hover {
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+        }
+
+        .dark .hover\:to-gray-800:hover {
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+        }
+
+        .dark .bg-white {
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+            border-color: rgb(55 65 81 / var(--tw-border-opacity));
+        }
+
+        .dark .bg-gray-50 {
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+        }
+
+        .dark .text-gray-800,
+        .dark .text-gray-700,
+        .dark .text-gray-600 {
+            color: rgb(209 213 219 / var(--tw-text-opacity));
+        }
+
+        .dark .border-gray-200,
+        .dark .border-gray-100 {
+            border-color: rgb(55 65 81 / var(--tw-border-opacity));
+        }
+
+        .dark .bg-gradient-to-br.from-blue-100.to-white {
+            background: linear-gradient(to bottom right, rgb(30 41 59), rgb(15 23 42));
+        }
+
+        .dark .bg-blue-100 {
+            background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+        }
+
+        .dark .text-blue-800 {
+            color: rgb(147 197 253 / var(--tw-text-opacity));
+        }
+
+        .dark .bg-gray-900 {
+            background-color: rgb(3 7 18 / var(--tw-bg-opacity));
+        }
+
+        .dark .glass {
+            background: rgba(31, 41, 55, 0.5);
+            border-color: rgba(55, 65, 81, 0.3);
+        }
+        
+        /* Logo styling */
+        .header-logo {
+            height: 3rem; /* 48px */
+            width: auto;
+            max-height: 4rem; /* 64px */
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .header-logo {
+                height: 2.5rem; /* 40px */
+                max-height: 3rem; /* 48px */
+            }
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif; /* Default to Tajawal for Arabic */
+            scroll-behavior: smooth;
+        }
+
+        body[lang="en"] {
+            font-family: 'Inter', sans-serif; /* Use Inter for English */
+        }
+        
+        /* Custom animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Card hover effects */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Underline animation */
+        .hover-underline-animation {
+            position: relative;
+        }
+        
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            background-color: var(--primary-color); /* Use theme primary color */
+            transition: width 0.3s ease;
+        }
+        
+        html[dir="rtl"] .hover-underline-animation::after {
+            right: 0;
+            left: auto;
+        }
+
+        html[dir="ltr"] .hover-underline-animation::after {
+            left: 0;
+            right: auto;
+        }
+
+        .hover-underline-animation:hover::after {
+            width: 100%;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+        
+        /* Hero pattern */
+        .hero-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Floating shapes */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        /* 3D card effect */
+        .card-3d {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        
+        .card-3d:hover {
+            transform: perspective(1000px) rotateY(10deg) rotateX(5deg) translateY(-5px);
+        }
+
+        /* --- START: LTR Adjustments for Header & General Layout --- */
+        /* Force flex-direction to row for elements using space-x-reverse in LTR */
+        html[dir="ltr"] .space-x-reverse {
+            flex-direction: row !important;
+            /* Remove the negative margin associated with space-x-reverse in RTL */
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        /* Re-apply standard space-x behavior for LTR within these elements */
+        html[dir="ltr"] .space-x-reverse > *:not(:first-child) {
+            margin-left: var(--tw-space-x-reverse, 1rem) !important; /* Default 1rem for space-x-4, 2rem for space-x-8 */
+            margin-right: 0 !important;
+        }
+
+        /* Specific margin/padding/position swaps */
+        html[dir="ltr"] .mr-auto {
+            margin-right: 0 !important;
+            margin-left: auto !important;
+        }
+
+        html[dir="ltr"] .ml-auto {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        html[dir="ltr"] .ml-2 {
+            margin-left: 0 !important;
+            margin-right: 0.5rem !important;
+        }
+
+        html[dir="ltr"] .mr-2 {
+            margin-right: 0 !important;
+            margin-left: 0.5rem !important;
+        }
+
+        html[dir="ltr"] .ml-1 {
+            margin-left: 0 !important;
+            margin-right: 0.25rem !important;
+        }
+
+        html[dir="ltr"] .mr-1 {
+            margin-right: 0 !important;
+            margin-left: 0.25rem !important;
+        }
+
+        html[dir="ltr"] .pl-3 {
+            padding-left: 0 !important;
+            padding-right: 0.75rem !important;
+        }
+
+        html[dir="ltr"] .pr-8 {
+            padding-right: 0 !important;
+            padding-left: 2rem !important;
+        }
+
+        html[dir="ltr"] .right-0 {
+            right: auto !important;
+            left: 0 !important;
+        }
+
+        html[dir="ltr"] .left-0 {
+            left: auto !important;
+            right: 0 !important;
+        }
+
+        html[dir="ltr"] .right-2 {
+            right: auto !important;
+            left: 0.5rem !important;
+        }
+
+        html[dir="ltr"] .left-2 {
+            left: auto !important;
+            right: 0.5rem !important;
+        }
+
+        html[dir="ltr"] .text-right {
+            text-align: left !important;
+        }
+
+        html[dir="ltr"] .text-left {
+            text-align: right !important;
+        }
+
+        html[dir="ltr"] .border-l {
+            border-left-width: 0 !important;
+            border-right-width: 1px !important;
+        }
+
+        html[dir="ltr"] .md\:border-l-0 {
+            border-left-width: 0 !important;
+        }
+
+        html[dir="ltr"] .md\:border-r {
+            border-right-width: 0 !important;
+            border-left-width: 1px !important;
+        }
+
+        html[dir="ltr"] .last\:border-r-0:last-child {
+            border-right-width: 0 !important;
+        }
+
+        html[dir="ltr"] .last\:border-l-0:last-child {
+            border-left-width: 0 !important;
+        }
+
+        html[dir="ltr"] .mr-4 {
+            margin-right: 0 !important;
+            margin-left: 1rem !important;
+        }
+
+        html[dir="ltr"] .ml-4 {
+            margin-left: 0 !important;
+            margin-right: 1rem !important;
+        }
+
+        html[dir="ltr"] .mr-3 {
+            margin-right: 0 !important;
+            margin-left: 0.75rem !important;
+        }
+
+        html[dir="ltr"] .ml-3 {
+            margin-left: 0 !important;
+            margin-right: 0.75rem !important;
+        }
+
+        html[dir="ltr"] .right-6 {
+            right: auto !important;
+            left: 1.5rem !important;
+        }
+
+        html[dir="ltr"] .left-6 {
+            left: auto !important;
+            right: 1.5rem !important;
+        }
+
+        html[dir="ltr"] .pl-4 {
+            padding-left: 0 !important;
+            padding-right: 1rem !important;
+        }
+
+        html[dir="ltr"] .absolute.right-0 {
+            right: auto !important;
+            left: 0 !important;
+        }
+
+        html[dir="ltr"] .absolute.left-0 {
+            left: auto !important;
+            right: 0 !important;
+        }
+
+        html[dir="ltr"] .bottom-6.left-6 {
+            left: auto !important;
+            right: 1.5rem !important;
+        }
+
+        html[dir="ltr"] .bottom-6.right-6 {
+            right: auto !important;
+            left: 1.5rem !important;
+        }
+
+        /* Specific fix for select dropdown icons */
+        html[dir="ltr"] .relative .absolute.inset-y-0.right-0 {
+            right: auto !important;
+            left: 0 !important;
+        }
+
+        /* Specific fix for input placeholder text alignment */
+        html[dir="ltr"] input[data-i18n-placeholder] {
+            text-align: left !important;
+        }
+        /* --- END: LTR Adjustments for Header & General Layout --- */
+    </style>
+</head>
+<body class="theme-blue bg-gray-50 text-gray-800 overflow-x-hidden">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <!-- Updated Logo Image next to text -->
+                <img src="https://up6.cc/2025/07/175318853994541.png" alt="Moqawel Plus Logo" class="header-logo" style="height: 4rem; max-height: 5rem;">
+                <h1 class="text-2xl font-bold">
+                    <span class="text-gray-800 dark:text-gray-200" data-i18n="header.logo.part1">مقاول</span>
+                    <span class="logo-gradient" data-i18n="header.logo.part2">بــلــس</span>
+                </h1>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <!-- Language Selector -->
+                <div class="relative">
+                    <select id="languageSelector" class="appearance-none bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-full pl-3 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer text-sm font-medium">
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Theme Selector -->
+                <div class="relative">
+                    <select id="themeSelector" class="appearance-none bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-full pl-3 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer text-sm font-medium">
+                        <option value="blue" data-i18n="header.themeSelector.blue"> أزرق</option>
+                        <option value="gold" data-i18n="header.themeSelector.gold"> ذهبي</option>
+                        <option value="pink" data-i18n="header.themeSelector.pink"> وردي</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
+                
+                <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-600">
+                    <i class="fas fa-moon dark:hidden hover:text-blue-500 transition-colors"></i>
+                    <i class="fas fa-sun hidden dark:block hover:text-yellow-400 transition-colors"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8 space-x-reverse">
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition flex items-center hover-underline-animation">
+                    <i class="fas fa-home ml-2"></i>
+                    <span data-i18n="header.nav.home">الرئيسية</span>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition flex items-center hover-underline-animation">
+                    <i class="fas fa-hard-hat ml-2"></i>
+                    <span data-i18n="header.nav.contactUs">تواصل معنا</span>
+                </a>
+               
+               
+               <a id="about-link" href="about/about.html" class="text-gray-700 hover:text-blue-600 transition flex items-center hover-underline-animation">
+                    <i class="fas fa-info-circle ml-2"></i>
+                    <span data-i18n="header.nav.aboutUs">من نحن</span>
+                </a>
+                <a id="login-link-desktop" href="login/login.html" class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-5 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-indigo-600 transition shadow-md hover:shadow-lg flex items-center">
+                    <i class="fas fa-sign-in-alt ml-2"></i>
+                    <span data-i18n="header.nav.loginRegister">دخول / تسجيل جديد</span>
+                </a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-gray-800 focus:outline-none" id="mobileMenuButton">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden bg-white shadow-lg rounded-b-lg" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#" class="hover:text-blue-600 transition flex items-center py-2 border-b border-gray-100">
+                    <i class="fas fa-home ml-2"></i>
+                    <span data-i18n="header.nav.home">الرئيسية</span>
+                </a>
+                <a href="#" class="hover:text-blue-600 transition flex items-center py-2 border-b border-gray-100">
+                    <i class="fas fa-hard-hat ml-2"></i>
+                    <span data-i18n="header.mobileNav.contractors">المقاولون</span>
+                </a>
+                <a href="#" class="hover:text-blue-600 transition flex items-center py-2 border-b border-gray-100">
+                    <i class="fas fa-user-plus ml-2"></i>
+                    <span data-i18n="header.mobileNav.registerClient">تسجيل عميل</span>
+                </a>
+                <a href="#" class="hover:text-blue-600 transition flex items-center py-2 border-b border-gray-100">
+                    <i class="fas fa-tools ml-2"></i>
+                    <span data-i18n="header.mobileNav.registerContractor">تسجيل مقاول</span>
+                </a>
+                <a id="about-link-mobile" href="about/about.html" class="text-gray-700 hover:text-blue-600 transition flex items-center hover-underline-animation">
+                    <i class="fas fa-info-circle ml-2"></i>
+                    <span data-i18n="header.nav.aboutUs">من نحن</span>
+                </a>
+                <a id="login-link-mobile" href="login/login.html" class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-5 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-indigo-600 transition mt-2 flex items-center justify-center">
+                    <i class="fas fa-sign-in-alt ml-2"></i>
+                    <span data-i18n="header.mobileNav.login">دخول</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[600px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+        <!-- Floating shapes -->
+        <div class="floating-shape w-64 h-64 bg-blue-500 top-20 right-20 animate-float"></div>
+        <div class="floating-shape w-80 h-80 bg-indigo-500 bottom-40 left-40 animate-float animation-delay-2000"></div>
+        <div class="floating-shape w-48 h-48 bg-purple-500 top-1/4 left-1/4 animate-float"></div>
+        <div class="floating-shape w-56 h-56 bg-blue-400 bottom-1/3 right-1/3 animate-float animation-delay-2000"></div>
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/30"></div>
+        
+        <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+            <div class="max-w-2xl text-center mx-auto">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-300" data-i18n="hero.title.part1">ابحث عن أفضل المقاولين</span>
+                    <br>
+                    <span class="text-white/90 font-light tracking-wider" data-i18n="hero.title.part2">لمشروعك القادم</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 tracking-wide" data-i18n="hero.description">
+                    نوفر لك أفضل المقاولين المحترفين في مختلف التخصصات لتحقيق رؤيتك بدقة وجودة عالية
+                </p>
+                
+                <div class="relative max-w-2xl mx-auto">
+                    <input type="text" id="serviceSearchInput" data-i18n-placeholder="hero.search.placeholder" placeholder="ما هي الخدمة التي تبحث عنها؟" class="w-full px-4 py-3 sm:px-6 sm:py-5 rounded-full shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-800 text-right border-2 border-blue-400/30 hover:border-blue-400/50 transition-all duration-300 text-sm sm:text-base">
+                    <button id="serviceSearchButton" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-3 py-1.5 sm:px-6 sm:py-2.5 rounded-full hover:from-blue-600 hover:to-indigo-600 transition-all shadow-lg hover:shadow-blue-500/30 text-sm sm:text-base">
+                        <i class="fas fa-search ml-2"></i>
+                        <span data-i18n="hero.search.button">بحث</span>
+                    </button>
+                    <div id="searchResults" class="absolute z-10 w-full mt-2 bg-white rounded-lg shadow-lg hidden max-h-96 overflow-y-auto">
+                        <!-- نتائج البحث ستظهر هنا -->
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex justify-center space-x-4 space-x-reverse">
+                    <div class="flex items-center">
+                        <span class="text-white/80 text-sm mr-3" data-i18n="hero.stats.clients">+10,000 عميل واثق</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll down indicator -->
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+            <a href="#services" class="text-white text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white shadow-md -mt-1 relative z-20">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
+                <div class="p-4 border-l md:border-l-0 md:border-r border-gray-200 last:border-r-0">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 text-blue-600" data-i18n="stats.contractors.count">+500</div>
+                    <div class="text-gray-600" data-i18n="stats.contractors.label">مقاول محترف</div>
+                </div>
+                <div class="p-4 border-l md:border-l-0 md:border-r border-gray-200 last:border-r-0">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 text-blue-600" data-i18n="stats.projects.count">+2,000</div>
+                    <div class="text-gray-600" data-i18n="stats.projects.label">مشروع مكتمل</div>
+                </div>
+                <div class="p-4 border-l md:border-l-0 md:border-r border-gray-200 last:border-r-0">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 text-blue-600" data-i18n="stats.clients.count">+10,000</div>
+                    <div class="text-gray-600" data-i18n="stats.clients.label">عميل راضٍ</div>
+                </div>
+                <div class="p-4 border-l md:border-l-0 md:border-r border-gray-200 last:border-r-0">
+                    <div class="text-3xl md:text-4xl font-bold mb-2 text-blue-600" data-i18n="stats.satisfaction.percentage">95%</div>
+                    <div class="text-gray-600" data-i18n="stats.satisfaction.label">رضا العملاء</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="whyChooseUs.heading.tag">لماذا نحن؟</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="whyChooseUs.heading.title">لماذا تختار مقاول بلس؟</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="whyChooseUs.heading.description">
+                    نحن نجمع بين الخبرة، الجودة، والابتكار لتقديم أفضل تجربة لعملائنا ومقاولينا.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature1.title">جودة موثوقة</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature1.description">
+                        نضمن لك الحصول على خدمات عالية الجودة من مقاولين معتمدين وذوي خبرة.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature2.title">سهولة الاستخدام</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature2.description">
+                        واجهة مستخدم بسيطة وسهلة تتيح لك العثور على ما تبحث عنه بسرعة.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature3.title">أمان وخصوصية</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature3.description">
+                        نحمي بياناتك ومعلوماتك الشخصية بأعلى معايير الأمان والخصوصية.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature4.title">دعم فني متواصل</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature4.description">
+                        فريق دعم مخصص لمساعدتك في أي وقت، لضمان تجربة سلسة.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature5.title">أسعار تنافسية</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature5.description">
+                        نقدم أفضل الأسعار في السوق مع الحفاظ على جودة الخدمات المقدمة.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-gray-800" data-i18n="whyChooseUs.feature6.title">فريق عمل متخصص</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="whyChooseUs.feature6.description">
+                        فريق من الخبراء والمقاولين المتخصصين في جميع المجالات الإنشائية.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="services.heading.tag">خدماتنا</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="services.heading.title">خدماتنا المتكاملة</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="services.heading.description">
+                    نوفر مجموعة واسعة من الخدمات الإنشائية والتشطيبية لتلبية جميع احتياجاتك
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8" id="servicesContainer">
+                <!-- Service 1 - استشارة مقاول بلس -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.consultation.title">استشارة مقاول بلس</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.consultation.description">
+                        استشارات متخصصة في البناء والتشييد من خبراء معتمدين لمساعدتك في اتخاذ القرارات الصحيحة لمشروعك
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.furniture.title">أثاث</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.furniture.description">
+                        تصنيع وتنفيذ الأثاث الخشبي والمعدني حسب الطلب وبأعلى معايير الجودة
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.electricity.title">كهرباء</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.electricity.description">
+                        تركيب وصيانة التمديدات الكهربائية بكافة أنواعها مع ضمان الجودة والسلامة
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.plumbing.title">سباكة</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.plumbing.description">
+                        حلول متكاملة للسباكة المنزلية والتجارية مع استخدام أفضل المواد
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-trowel"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.finishing.title">تشطيبات</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.finishing.description">
+                        أعمال التشطيب الداخلي والخارجي باحترافية عالية ووفق أحدث المواصفات
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.construction.title">بناء</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.construction.description">
+                        تنفيذ مشاريع البناء الكاملة بجودة عالية ووفق المخططات والمواصفات
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 7 - ديكورات -->
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.decorations.title">ديكورات</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.decorations.description">
+                        تصميم وتنفيذ الديكورات الداخلية والخارجية باحترافية عالية وبأحدث التصاميم
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 8 - صيانة مكيفات -->
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.ac_maintenance.title">صيانة مكيفات</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.ac_maintenance.description">
+                        صيانة دورية وعلاج أعطال جميع أنواع المكيفات المنزلية والتجارية مع ضمان الجودة واستخدام قطع غيار أصلية
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 9 - مسابح -->
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.pools.title">مسابح</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.pools.description">
+                        تصميم وبناء المسابح المنزلية والفنادقية مع أنظمة الترشيح والتعقيم الحديثة والصيانة الدورية
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 10 - تاجير العمالة -->
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.labor_rental.title">تاجير العمالة</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.labor_rental.description">
+                        توفير عمالة مدربة وماهرة في مختلف تخصصات البناء والتشييد مع ضمان الجودة والالتزام بالمواعيد
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Additional services (hidden initially) -->
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d" style="display: none;">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.building_materials.title">مواد البناء</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.building_materials.description">
+                        توريد جميع مواد البناء من أسمنت وحديد وطوب وغيرها بأسعار تنافسية وجودة عالية
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.green_spaces.title">مساحات خضراء</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.green_spaces.description">
+                        تصميم وتنفيذ المساحات الخضراء والحدائق مع أنظمة الري الحديثة والصيانة الدورية
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.safety_security.title">السلامة والأمن</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.safety_security.description">
+                        تركيب أنظمة السلامة والأمن بما في ذلك كاميرات المراقبة وأنظمة الإنذار
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.cleaning.title">تنظيف</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.cleaning.description">
+                        خدمات تنظيف شاملة للمنازل والمكاتب والمرافق العامة باستخدام أحدث المعدات
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.center_maintenance.title">صيانة المراكز</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.center_maintenance.description">
+                        صيانة شاملة للمراكز التجارية والمباني الإدارية مع فريق متخصص
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card hidden bg-white p-6 rounded-xl shadow-md transition-all duration-300 cursor-pointer transform hover:scale-[1.02] card-3d">
+                    <div class="service-icon bg-gradient-to-br from-blue-100 to-white text-blue-600 w-16 h-16 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 transition duration-300">
+                        <i class="fas fa-fence"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-3 text-gray-800" data-i18n="service.fences.title">أسوار</h3>
+                    <p class="text-gray-600 text-center text-sm" data-i18n="service.fences.description">
+                        تصميم وتركيب الأسوار بأنواعها المختلفة (حديد، خشب، ألومنيوم) مع ضمان الجودة
+                    </p>
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 text-sm font-medium inline-flex items-center">
+                            <span data-i18n="service.details_button">عرض التفاصيل</span>
+                            <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button id="showAllServices" class="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-gray-800 text-white font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
+                    <span data-i18n="services.showAll">عرض جميع الخدمات</span>
+                    <i class="fas fa-chevron-left mr-2"></i>
+                </button>
+            </div>
+            
+            <script>
+                document.getElementById('showAllServices').addEventListener('click', function() {
+                    const hiddenServices = document.querySelectorAll('.service-card.hidden');
+                    hiddenServices.forEach(service => {
+                        service.classList.remove('hidden');
+                    });
+                    this.style.display = 'none';
+                });
+            </script>
+        </div>
+    </section>
+
+    <!-- Featured Contractors -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="contractors.heading.tag">المقاولون</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="contractors.heading.title">مقاولون مميزون</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="contractors.heading.description">
+                    تعرف على أفضل المقاولين الذين تم اختيارهم بعناية بناءً على تقييمات العملاء
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                <!-- Contractor 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 card-3d">
+                    <div class="relative">
+                        <img src="https://tamkean.sa/wp-content/uploads/2023/12/C-01-High-res-768x550.jpg" alt="Contractor Work" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 right-6 w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU9epBUIqSZnJG1blQ2ZRw64i9mRq_r5ShWA&s" alt="Contractor" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl" data-i18n="contractor.name.tamkean"> تمكين للتطوير العقاري</h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm mr-1">(48 <span data-i18n="contractor.reviews">تقييم</span>)</span>
+                                </div>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" data-i18n="contractor.status.available">متاح الآن</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.decorations.title">ديكورات</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.furniture.title">أثاث</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1">غرف نوم</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 flex items-center text-sm">
+                            <i class="fas fa-map-marker-alt text-blue-500 ml-1"></i>
+                            <span data-i18n="contractor.location.riyadh_jeddah_dammam">الرياض، جدة، الدمام</span>
+                        </p>
+                        
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                            <span class="text-gray-500 text-sm" data-i18n="contractor.started_work_since">بدأ العمل منذ:</span> 2015
+                            <button class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow hover:shadow-md flex items-center">
+                                <span data-i18n="contractor.view_profile">عرض الملف</span>
+                                <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contractor 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 card-3d">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Contractor Work" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 right-6 w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                            <img src="https://sunrisegraphics.org/wp-content/uploads/2023/12/Screenshot-2024-06-30-at-10-37-33-%D8%A5%D8%B4%D8%B1%D8%A7%D9%82-%D9%84%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85-Behance.png" alt="Contractor" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl" data-i18n="contractor.name.diyark">ديارك للتطوير العقاري</h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm mr-1">(36 <span data-i18n="contractor.reviews">تقييم</span>)</span>
+                                </div>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" data-i18n="contractor.status.available">متاح الآن</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.electricity.title">كهرباء</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.plumbing.title">سباكة</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1">عزل</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 flex items-center text-sm">
+                            <i class="fas fa-map-marker-alt text-blue-500 ml-1"></i>
+                            <span data-i18n="contractor.location.riyadh_makkah_madinah">الرياض، مكة، المدينة</span>
+                        </p>
+                        
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                            <span class="text-gray-500 text-sm" data-i18n="contractor.started_work_since">بدأ العمل منذ:</span> 2018
+                            <button class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow hover:shadow-md flex items-center">
+                                <span data-i18n="contractor.view_profile">عرض الملف</span>
+                                <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contractor 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 card-3d">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Contractor Work" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 right-6 w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                            <div class="w-full h-full bg-white flex items-center justify-center p-2">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt-7sxPqCiE6TQklAVwWg8g8Q9DSW6FesVnQ&s" alt="Company Logo" class="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl" data-i18n="contractor.name.meisan">شركة ميسان</h3>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm mr-1">(72 <span data-i18n="contractor.reviews">تقييم</span>)</span>
+                                </div>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" data-i18n="contractor.status.available">متاح الآن</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.finishing.title">تشطيبات</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1">دهانات</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mr-1 mb-1" data-i18n="service.decorations.title">ديكورات</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4 flex items-center text-sm">
+                            <i class="fas fa-map-marker-alt text-blue-500 ml-1"></i>
+                            <span data-i18n="contractor.location.jeddah_khobar_dammam">جدة، الخبر، الدمام</span>
+                        </p>
+                        
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                            <span class="text-gray-500 text-sm" data-i18n="contractor.started_work_since">بدأ العمل منذ:</span> 2012
+                            <button class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow hover:shadow-md flex items-center">
+                                <span data-i18n="contractor.view_profile">عرض الملف</span>
+                                <i class="fas fa-chevron-left mr-1 text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-gray-800 text-white font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
+                    <span data-i18n="contractors.showAll">عرض جميع المقاولين</span>
+                    <i class="fas fa-chevron-left mr-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="howItWorks.heading.tag">كيف تعمل</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="howItWorks.heading.title">كيف تعمل منصة مقاول بلس؟</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="howItWorks.heading.description">
+                    خطوات بسيطة تفصلك عن تحقيق مشروعك مع أفضل المقاولين المحترفين
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Connecting Line -->
+                <div class="hidden md:block absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 z-0"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative z-10 text-center px-4">
+                    <div class="bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-hover)] text-white w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg hovered-element">
+                        <span class="font-bold">1</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3" data-i18n="howItWorks.step1.title">اختر الخدمة المطلوبة</h3>
+                    <p class="text-gray-600" data-i18n="howItWorks.step1.description">
+                        تصفح قائمة الخدمات المتاحة واختر ما يناسب مشروعك من بين عشرات التخصصات المختلفة
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative z-10 text-center px-4">
+                    <div class="bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-hover)] text-white w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg">
+                        <span class="font-bold">2</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3" data-i18n="howItWorks.step2.title">ابحث عن المقاول المناسب</h3>
+                    <p class="text-gray-600" data-i18n="howItWorks.step2.description">
+                        تصفح ملفات المقاولين واختر الأفضل بناءً على التقييمات والأعمال السابقة والسعر والخبرة
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative z-10 text-center px-4">
+                    <div class="bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-hover)] text-white w-20 h-20 mx-auto rounded-xl flex items-center justify-center text-3xl mb-4 shadow-lg">
+                        <span class="font-bold">3</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3" data-i18n="howItWorks.step3.title">تواصل وابدأ المشروع</h3>
+                    <p class="text-gray-600" data-i18n="howItWorks.step3.description">
+                        تواصل مع المقاول مباشرة، حدد التفاصيل وابدأ مشروعك بكل سهولة ويسر مع ضمان الجودة
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 text-white relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48L3N2Zz4=')"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-purple-500/10 blur-3xl"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-white/20 text-white text-sm px-4 py-1 rounded-full mb-3 font-medium tracking-wider" data-i18n="testimonials.heading.tag">آراء العملاء</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent" data-i18n="testimonials.heading.title">ماذا يقول عملاؤنا</h2>
+                <p class="text-white/90 max-w-2xl mx-auto text-lg" data-i18n="testimonials.heading.description">
+                    آراء عملائنا الذين استفادوا من خدمات منصة مقاول بلس
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="glass bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl hover:bg-white/15 transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:-translate-y-1.5 hover:border-white/30">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full border-2 border-white overflow-hidden shadow">
+                            <img src="https://sa.arabisklondon.com/wp-content/uploads/2024/04/IMG_1035-jpeg-e1712100725504-1.webp" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="font-bold" data-i18n="testimonial.amal.name">أمل محمد</h4>
+                            <div class="flex text-yellow-300 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic relative pl-4">
+                        <i class="fas fa-quote-left text-white/20 absolute right-0 top-0 text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        <span data-i18n="testimonial.amal.quote">"منصة رائعة ساعدتني في العثور على مقاول محترف لتجديد شقتي. كانت الخدمة ممتازة والسعر مناسب. المقاول كان دقيقًا في المواعيد وجودة العمل تفوق التوقعات. شكرًا لكم على هذه المنصة المميزة!"</span>
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="glass bg-white/15 backdrop-blur-lg border border-white/30 p-8 rounded-2xl hover:bg-white/20 transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full border-2 border-white overflow-hidden shadow">
+                            <img src="https://tessutiitaliano.com/wp-content/uploads/2020/08/What-are-the-Saudi-traditional-dress--1200x900.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="font-bold" data-i18n="testimonial.khalid.name">خالد عبدالله</h4>
+                            <div class="flex text-yellow-300 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic relative pl-4">
+                        <i class="fas fa-quote-left text-white/20 absolute right-0 top-0 text-2xl"></i>
+                        <span data-i18n="testimonial.khalid.quote">"استخدمت المنصة للعثور على مقاول كهرباء لمكتبي الجديد. كانت التجربة سلسة والمقاول كان محترفًا جدًا. تم تنفيذ العمل في الوقت المحدد وبأعلى معايير الجودة. سأستخدم المنصة بالتأكيد لمشاريعي القادمة وأوصي بها للجميع."</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-900 text-white relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-indigo-500/10 blur-3xl"></div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="cta.title">هل أنت مستعد لبدء مشروعك؟</h2>
+            <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto" data-i18n="cta.description">
+                انضم إلى آلاف العملاء الذين وجدوا المقاول المثالي لمشاريعهم من خلال منصتنا
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                <button class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center justify-center">
+                    <i class="fas fa-hard-hat ml-2"></i>
+                    <span data-i18n="cta.button.registerContractor">تسجيل مقاول</span>
+                </button>
+                <button class="bg-white text-gray-900 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center justify-center">
+                    <i class="fas fa-user-plus ml-2"></i>
+                    <span data-i18n="cta.button.registerClient">تسجيل عميل</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-4 py-1 rounded-full mb-3" data-i18n="faq.heading.tag">الأسئلة الشائعة</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="faq.heading.title">أسئلة متكررة</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="faq.heading.description">
+                    أجوبة على أكثر الأسئلة التي تردنا من عملائنا
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full text-right p-4 bg-gray-50 hover:bg-gray-100 transition focus:outline-none">
+                        <span class="font-medium text-gray-800" data-i18n="faq.q1.question">كيف أضمن جودة عمل المقاول؟</span>
+                        <i class="fas fa-chevron-down text-blue-600 ml-2 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-4 text-gray-600 hidden bg-white">
+                        <p data-i18n="faq.q1.answer">جميع المقاولين في منصتنا يخضعون لمراجعة دقيقة قبل قبولهم، كما أننا نعرض تقييمات العملاء السابقين لكل مقاول. بالإضافة إلى ذلك، نقدم ضمانًا لمدة 3 أشهر على جميع الأعمال المنفذة من خلال المنصة.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full text-right p-4 bg-gray-50 hover:bg-gray-100 transition focus:outline-none">
+                        <span class="font-medium text-gray-800" data-i18n="faq.q2.question">ما هي طريقة الدفع المتاحة؟</span>
+                        <i class="fas fa-chevron-down text-blue-600 ml-2 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-4 text-gray-600 hidden bg-white">
+                        <p data-i18n="faq.q2.answer">يمكنك الدفع عبر التحويل البنكي، كما نقدم خيار الدفع الإلكتروني عبر المنصة لحماية حقوق جميع الأطراف. يتم تحويل المبلغ للمقاول بعد إتمام العمل ورضاك عنه.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full text-right p-4 bg-gray-50 hover:bg-gray-100 transition focus:outline-none">
+                        <span class="font-medium text-gray-800" data-i18n="faq.q3.question">هل يمكنني طلب تعديلات أثناء التنفيذ؟</span>
+                        <i class="fas fa-chevron-down text-blue-600 ml-2 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-4 text-gray-600 hidden bg-white">
+                        <p data-i18n="faq.q3.answer">نعم، يمكنك طلب تعديلات أثناء التنفيذ بعد الاتفاق مع المقاول على التكلفة الإضافية والوقت اللازم. ننصح دائمًا بوضع جميع التفاصيل في العقد المبدئي لتجنب أي سوء تفاهم.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question flex justify-between items-center w-full text-right p-4 bg-gray-50 hover:bg-gray-100 transition focus:outline-none">
+                        <span class="font-medium text-gray-800" data-i18n="faq.q4.question">كيف أتأكد من التزام المقاول بالمواعيد؟</span>
+                        <i class="fas fa-chevron-down text-blue-600 ml-2 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-4 text-gray-600 hidden bg-white">
+                        <p data-i18n="faq.q4.answer">نحن نتابع مع المقاولين التزامهم بالمواعيد المتفق عليها، كما يمكنك متابعة تقدم العمل عبر المنصة. في حال تأخر المقاول بدون مبرر، يمكنك التواصل مع فريق الدعم لمساعدتك في حل المشكلة.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-gray-800 text-white font-medium py-3 px-8 rounded-lg transition shadow-md hover:shadow-lg inline-flex items-center">
+                    <span data-i18n="faq.showMore">عرض المزيد من الأسئلة</span>
+                    <i class="fas fa-chevron-left mr-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://up6.cc/2025/07/175318853994541.png" alt="مقاول بلس" class="h-12 w-32 object-contain">
+                        <h3 class="mr-3 text-xl font-bold">مقاول بلس</h3>
+                    </div>
+                    <p class="text-gray-400" data-i18n="footer.company">شركة رائدة في مجال البناء والتشييد بالمملكة العربية السعودية، نقدم حلولاً متكاملة بمعايير عالمية.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer.quick_links">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">من نحن</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white">خدماتنا</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white">مشاريعنا</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">خدماتنا</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">البناء والتشييد</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">التصميم المعماري</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">التشطبات الداخلية</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">الصيانة والتجديد</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">إدارة المشاريع</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">اتصل بنا</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 ml-2 text-blue-400"></i>
+                            <span class="text-gray-400">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone ml-2 text-blue-400"></i>
+                            <span class="text-gray-400">+966 559006064</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope ml-2 text-blue-400"></i>
+                            <span class="text-gray-400">info@muqawil-plus.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3 space-x-reverse mt-4">
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2023 مقاول بلس. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+        <!-- Decorative pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZShBNDUpIi4+PHJlY3Qgd2lkdGg9IjIwIiBoZ

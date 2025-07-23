@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-i18n-html data-theme="gold">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="about.title">من نحن - مقاول بلس</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend/i18nextHttpBackend.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme changes */
+        }
+        
+        /* RTL/LTR support */
+        html[dir="rtl"] {
+            direction: rtl;
+        }
+        html[dir="ltr"] {
+            direction: ltr;
+        }
+        
+        /* Hero section will now have a dynamic overlay */
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative; /* For overlay positioning */
+            z-index: 0;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1; /* Behind content */
+            opacity: 0.7; /* Semi-transparent overlay */
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Theme-specific styles based on data-theme attribute on html */
+        /* Gold Theme */
+        html[data-theme="gold"] body { background-color: #FDF5E6; color: #4b5563; } /* Soft Gold background, dark text */
+        html[data-theme="gold"] .bg-themed-light { background-color: #FFFFFF; } /* White for cards, header etc. */
+        html[data-theme="gold"] .bg-themed-medium { background-color: #F8F9FA; } /* Light gray for sections */
+        html[data-theme="gold"] .bg-themed-darkest { background-color: #34495E; } /* Dark blue-gray for footer */
+        html[data-theme="gold"] .text-themed-dark { color: #4b5563; } /* Dark gray text */
+        html[data-theme="gold"] .text-themed-lightest { color: #FFFFFF; } /* White text on darkest background */
+        html[data-theme="gold"] .border-themed-light { border-color: #E5E7EB; } /* Light border */
+        html[data-theme="gold"] .bg-themed-accent { background-color: #DAA520; } /* Goldenrod */
+        html[data-theme="gold"] .text-themed-accent { color: #DAA520; } /* Goldenrod text */
+        html[data-theme="gold"] .bg-themed-social-icon { background-color: #4b5563; } /* For social icons in footer */
+        html[data-theme="gold"] .hero-section::before { background-color: #2c3e50; } /* Dark blue-gray overlay for hero */
+        html[data-theme="gold"] .border-themed-accent { border-color: #DAA520; } /* Goldenrod border */
+
+
+        /* Blue Theme */
+        html[data-theme="blue"] body { background-color: #E0FFFF; color: #2C3E50; } /* Light Cyan background, darker text */
+        html[data-theme="blue"] .bg-themed-light { background-color: #FFFFFF; }
+        html[data-theme="blue"] .bg-themed-medium { background-color: #F0F8FF; } /* Slightly different light gray for blue theme */
+        html[data-theme="blue"] .bg-themed-darkest { background-color: #1A2E40; } /* Even darker blue-gray */
+        html[data-theme="blue"] .text-themed-dark { color: #2C3E50; }
+        html[data-theme="blue"] .text-themed-lightest { color: #FFFFFF; }
+        html[data-theme="blue"] .border-themed-light { border-color: #ADD8E6; }
+        html[data-theme="blue"] .bg-themed-accent { background-color: #1E90FF; } /* Dodger Blue accent */
+        html[data-theme="blue"] .text-themed-accent { color: #1E90FF; } /* Dodger Blue accent text */
+        html[data-theme="blue"] .bg-themed-social-icon { background-color: #2C3E50; }
+        html[data-theme="blue"] .hero-section::before { background-color: #1A2E40; } /* Darker blue-gray overlay for hero */
+        html[data-theme="blue"] .border-themed-accent { border-color: #1E90FF; } /* Dodger Blue border */
+
+
+        /* Pink Theme */
+        html[data-theme="pink"] body { background-color: #FFF0F5; color: #5B2C6F; } /* Lavender Blush background, purple text */
+        html[data-theme="pink"] .bg-themed-light { background-color: #FFFFFF; }
+        html[data-theme="pink"] .bg-themed-medium { background-color: #FDEEF4; }
+        html[data-theme="pink"] .bg-themed-darkest { background-color: #4A1942; } /* Dark purple */
+        html[data-theme="pink"] .text-themed-dark { color: #5B2C6F; }
+        html[data-theme="pink"] .text-themed-lightest { color: #FFFFFF; }
+        html[data-theme="pink"] .border-themed-light { border-color: #FFC0CB; }
+        html[data-theme="pink"] .bg-themed-accent { background-color: #FF69B4; } /* Hot Pink accent */
+        html[data-theme="pink"] .text-themed-accent { color: #FF69B4; } /* Hot Pink accent text */
+        html[data-theme="pink"] .bg-themed-social-icon { background-color: #5B2C6F; }
+        html[data-theme="pink"] .hero-section::before { background-color: #4A1942; } /* Dark purple overlay for hero */
+        html[data-theme="pink"] .border-themed-accent { border-color: #FF69B4; } /* Hot Pink border */
+
+
+        /* Keep original blue for specific elements like check circles in about section (if not part of theme) */
+        /* This class is for the check circles in the 'About' section, which remain blue regardless of theme */
+        /* This class is for the check circles in the 'About' section, which remain blue regardless of theme */
+        /* Removed hardcoded bg-blue-600 and text-white where they were replaced by themed classes */
+        
+        /* Specific styles for dropdowns to keep them light */
+        .dropdown-light-bg {
+            background-color: #FFFFFF !important; /* Force white background */
+            border: 1px solid #e5e7eb; /* Light border */
+        }
+        .dropdown-light-bg .text-dropdown-dark {
+            color: #1f2937 !important; /* Force dark text */
+        }
+        .dropdown-light-bg .hover\:bg-gray-100:hover {
+            background-color: #f3f4f6 !important; /* Light hover */
+        }
+    </style>
+</head>
+<body class="text-themed-dark"> <!-- Default text color for light mode, now theme-controlled -->
+    <!-- Header -->
+    <header class="bg-themed-light shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://up6.cc/2025/07/175318853994541.png" alt="مقاول بلس" class="h-20 w-56 object-contain hover:scale-105 transition-transform duration-200">
+                <h1 class="mr-3 text-xl font-bold text-themed-accent">مقاول بلس</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-6 space-x-reverse">
+                <a href="index.html" class="text-themed-dark hover:text-themed-accent" data-i18n="nav.home">الرئيسية</a>
+                <a href="about.html" class="text-themed-accent font-medium" data-i18n="nav.about">من نحن</a>
+                <a href="services.html" class="text-themed-dark hover:text-themed-accent" data-i18n="nav.services">خدماتنا</a>
+                <a href="projects.html" class="text-themed-dark hover:text-themed-accent" data-i18n="nav.projects">مشاريعنا</a>
+                <a href="contact.html" class="text-themed-dark hover:text-themed-accent" data-i18n="nav.contact">اتصل بنا</a>
+            </nav>
+            
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <!-- Language Toggle -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center text-dropdown-dark bg-themed-light px-3 py-2 rounded-lg" id="languageToggle">
+                        <i class="fas fa-globe ml-2"></i>
+                        <span id="currentLanguage" class="text-dropdown-dark">العربية</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs text-dropdown-dark"></i>
+                    </button>
+                    <div class="absolute hidden right-0 mt-2 w-32 dropdown-light-bg rounded-md shadow-lg z-10" id="languageDropdown">
+                        <a href="#" data-lang="ar" class="block px-4 py-2 text-dropdown-dark hover:bg-gray-100 flex items-center">
+                            <span class="ml-2">العربية</span>
+                        </a>
+                        <a href="#" data-lang="en" class="block px-4 py-2 text-dropdown-dark hover:bg-gray-100 flex items-center">
+                            <span class="ml-2">English</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <div class="relative group ml-4">
+                    <button class="flex items-center text-dropdown-dark bg-themed-light px-3 py-2 rounded-lg" id="themeToggle">
+                        <i class="fas fa-palette ml-2"></i>
+                        <span id="currentTheme" class="text-dropdown-dark">ذهبي</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs text-dropdown-dark"></i>
+                    </button>
+                    <div class="absolute hidden right-0 mt-2 w-32 dropdown-light-bg rounded-md shadow-lg z-10" id="themeDropdown">
+                        <a href="#" data-theme="gold" class="block px-4 py-2 text-dropdown-dark hover:bg-gray-100 flex items-center">
+                            <span class="ml-2">ذهبي</span>
+                        </a>
+                        <a href="#" data-theme="blue" class="block px-4 py-2 text-dropdown-dark hover:bg-gray-100 flex items-center">
+                            <span class="ml-2">أزرق</span>
+                        </a>
+                        <a href="#" data-theme="pink" class="block px-4 py-2 text-dropdown-dark hover:bg-gray-100 flex items-center">
+                            <span class="ml-2">وردي</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="tel:+966500000000" class="hidden md:flex items-center text-themed-dark hover:text-themed-accent">
+                    <i class="fas fa-phone ml-2"></i>
+                    <span data-i18n="header.phone">+966 50 000 0000</span>
+                </a>
+                <!-- Dark mode toggle removed -->
+                <button class="md:hidden text-themed-dark">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-themed-light shadow-lg hidden" id="mobileMenu">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+            <a href="index.html" class="text-themed-dark hover:text-themed-accent py-2" data-i18n="nav.home"></a>
+            <a href="about.html" class="text-themed-accent font-medium py-2" data-i18n="nav.about"></a>
+            <a href="services.html" class="text-themed-dark hover:text-themed-accent py-2" data-i18n="nav.services"></a>
+            <a href="projects.html" class="text-themed-dark hover:text-themed-accent py-2" data-i18n="nav.projects"></a>
+            <a href="contact.html" class="text-themed-dark hover:text-themed-accent py-2" data-i18n="nav.contact"></a>
+            <a href="tel:+966500000000" class="flex items-center text-themed-dark hover:text-themed-accent py-2">
+                <i class="fas fa-phone ml-2"></i>
+                <span data-i18n="header.phone">+966 50 000 0000</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="about.hero_title">من نحن</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-i18n="about.hero_description">شركة مقاول بلس رائدة في مجال البناء والتشييد بالمملكة العربية السعودية</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-themed-light">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:ml-10">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="فريق مقاول بلس" 
+                         class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-themed-dark mb-6" data-i18n="about.story">قصتنا ورؤيتنا</h2>
+                    <p class="text-themed-dark mb-6 leading-relaxed" data-i18n="about.story_paragraph1">
+                        تأسست شركة مقاول بلس في عام 2010 بهدف تقديم حلول بناء متكاملة بمعايير عالمية. ومنذ ذلك الحين، كبرنا لنصبح أحد أبرز مزودي خدمات البناء والتشييد في المملكة العربية السعودية.
+                    </p>
+                    <p class="text-themed-dark mb-6 leading-relaxed" data-i18n="about.story_paragraph2">
+                        نؤمن بأن البناء ليس مجرد تشييد هياكل، بل هو صناعة بيوت تحكي قصصاً وخلق مجتمعات مزدهرة. لذلك نلتزم بأعلى معايير الجودة والسلامة في كل مشروع ننفذه.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="bg-themed-accent px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-check-circle text-white ml-2"></i>
+                            <span class="text-white" data-i18n="about.quality">جودة عالية</span>
+                        </div>
+                        <div class="bg-themed-accent px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-check-circle text-white ml-2"></i>
+                            <span class="text-white" data-i18n="about.commitment">التزام بالمواعيد</span>
+                        </div>
+                        <div class="bg-themed-accent px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-check-circle text-white ml-2"></i>
+                            <span class="text-white" data-i18n="about.competitive_prices">أسعار تنافسية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-themed-medium">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-themed-dark mb-12" data-i18n="about.stats">أرقامنا تتحدث عنا</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-themed-light p-6 rounded-lg shadow-sm">
+                    <div class="text-themed-accent text-4xl font-bold mb-2" data-i18n="stats.projects_count">+250</div>
+                    <div class="text-themed-dark" data-i18n="stats.projects_text">مشروع مكتمل</div>
+                </div>
+                <div class="bg-themed-light p-6 rounded-lg shadow-sm">
+                    <div class="text-themed-accent text-4xl font-bold mb-2" data-i18n="stats.awards_count">15</div>
+                    <div class="text-themed-dark" data-i18n="stats.awards_text">جائزة وتكريم</div>
+                </div>
+                <div class="bg-themed-light p-6 rounded-lg shadow-sm">
+                    <div class="text-themed-accent text-4xl font-bold mb-2" data-i18n="stats.employees_count">+120</div>
+                    <div class="text-themed-dark" data-i18n="stats.employees_text">موظف محترف</div>
+                </div>
+                <div class="bg-themed-light p-6 rounded-lg shadow-sm">
+                    <div class="text-themed-accent text-4xl font-bold mb-2" data-i18n="stats.experience_years">12</div>
+                    <div class="text-themed-dark" data-i18n="stats.experience_text">سنة خبرة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 bg-themed-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-themed-dark mb-12" data-i18n="about.journey">رحلة التميز</h2>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute right-1/2 top-0 h-full w-1 bg-themed-accent"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-12">
+                    <!-- Item 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0 md:text-right">
+                            <div class="bg-themed-light p-6 rounded-lg shadow-md border-l-4 border-themed-accent">
+                                <h3 class="text-xl font-bold text-themed-dark mb-2" data-i18n="timeline.year1_title">تأسيس الشركة</h3>
+                                <p class="text-themed-dark leading-relaxed" data-i18n="timeline.year1_description">بدأت رحلتنا بمشاريع صغيرة في مدينة الرياض، مع فريق مكون من 5 موظفين فقط.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 flex justify-center md:justify-start">
+                            <div class="bg-themed-accent text-white rounded-full w-16 h-16 flex items-center justify-center relative shadow-lg border-4 border-themed-light">
+                                <span class="font-bold">2010</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:order-last md:pl-8 mb-6 md:mb-0 md:text-left">
+                            <div class="bg-themed-light p-6 rounded-lg shadow-md border-r-4 border-themed-accent">
+                                <h3 class="text-xl font-bold text-themed-dark mb-2" data-i18n="timeline.year2_title">أول مشروع سكني كبير</h3>
+                                <p class="text-themed-dark leading-relaxed" data-i18n="timeline.year2_description">تنفيذ أول مشروع سكني متكامل بمساحة 10,000 متر مربع في مدينة جدة.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pr-8 flex justify-center md:justify-end">
+                            <div class="bg-themed-accent text-white rounded-full w-16 h-16 flex items-center justify-center relative shadow-lg border-4 border-themed-light">
+                                <span class="font-bold">2013</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0 md:text-right">
+                            <div class="bg-themed-light p-6 rounded-lg shadow-md border-l-4 border-themed-accent">
+                                <h3 class="text-xl font-bold text-themed-dark mb-2" data-i18n="timeline.year3_title">التوسع الإقليمي</h3>
+                                <p class="text-themed-dark leading-relaxed" data-i18n="timeline.year3_description">افتتاح فروع جديدة في الدمام والخبر، وتوسيع نطاق العمل ليشمل المشاريع التجارية.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 flex justify-center md:justify-start">
+                            <div class="bg-themed-accent text-white rounded-full w-16 h-16 flex items-center justify-center relative shadow-lg border-4 border-themed-light">
+                                <span class="font-bold">2016</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/2 md:order-last md:pl-8 mb-6 md:mb-0 md:text-left">
+                            <div class="bg-themed-light p-6 rounded-lg shadow-md border-r-4 border-themed-accent">
+                                <h3 class="text-xl font-bold text-themed-dark mb-2" data-i18n="timeline.year4_title">الجوائز والتكريم</h3>
+                                <p class="text-themed-dark leading-relaxed" data-i18n="timeline.year4_description">حصولنا على جائزة أفضل مقاول في المملكة للعام 2020 من قبل وزارة الإسكان.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pr-8 flex justify-center md:justify-end">
+                            <div class="bg-themed-accent text-white rounded-full w-16 h-16 flex items-center justify-center relative shadow-lg border-4 border-themed-light">
+                                <span class="font-bold">2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-themed-medium">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-themed-dark mb-12" data-i18n="about.team">فريق القيادة</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-themed-light rounded-lg overflow-hidden shadow-md">
+                    <img src="https://up6.cc/2025/07/175286177119231.jpg" 
+                         alt="الرائس التنفيذي" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-themed-dark" data-i18n="team.member1_name">نعمان المقبل</h3>
+                        <p class="text-themed-accent mb-4" data-i18n="team.member1_role">الرئيس التنفيذي</p>
+                        <p class="text-themed-dark" data-i18n="team.member1_bio">رائيس كبار المهندسين بخبرة تزيد عن 20 عاماً في مجال البناء والتشييد، قاد العديد من المشاريع الكبرى في المملكة.</p>
+                        <div class="flex mt-4 space-x-3 space-x-reverse">
+                            <a href="#" class="text-themed-dark hover:text-themed-accent"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-themed-dark hover:text-themed-accent"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-themed-light rounded-lg overflow-hidden shadow-md">
+                    <img src="https://up6.cc/2025/07/175326288984271.jpg" 
+                         alt="مدير تنفيذي" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-themed-dark" data-i18n="team.member2_name">اسماعيل المقبل</h3>
+                        <p class="text-themed-accent mb-4" data-i18n="team.member2_role">مدير تنفيذي</p>
+                        <p class="text-themed-dark" data-i18n="team.member2_bio"> قيادة وتنفيذ مشاريع نوعية تجمع بين التصميم المعماري الفاخر والحلول التقنية،.</p>
+                        <div class="flex mt-4 space-x-3 space-x-reverse">
+                            <a href="#" class="text-themed-dark hover:text-themed-accent"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-themed-dark hover:text-themed-accent"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-themed-light rounded-lg overflow-hidden shadow-md">
+                    <img src="https://up6.cc/2025/07/17532627705641.jpg" 
+                         alt="مدير التطوير" 
+                         class="w-full h-64 object-cover mt-4">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-themed-dark" data-i18n="team.member3_name">محمد سعد</h3>
+                        <p class="text-themed-accent mb-4" data-i18n="team.member3_role">مدير تطوير</p>
+                        <p class="text-themed-dark" data-i18n="team.member3_bio">خبير في أنظمة الجودة والسلامة، حاصل على شهادات عالمية في إدارة الجودة في مشاريع البناء.</p>
+                        <div class="flex mt-4 space-x-3 space-x-reverse">
+                            <a href="#" class="text-themed-dark hover:text-themed-accent"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-themed-dark hover:text-themed-accent"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-themed-accent text-themed-lightest">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-i18n="about.cta">هل لديك مشروع في ذهنك؟</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-i18n="about.cta_description">فريقنا مستعد لمساعدتك في تحويل رؤيتك إلى واقع ملموس بأعلى معايير الجودة</p>
+            <a href="contact.html" class="bg-themed-light text-themed-accent px-8 py-3 rounded-full font-bold inline-block hover:bg-themed-medium transition duration-300" data-i18n="about.cta_button">
+                اتصل بنا الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-themed-darkest text-themed-lightest py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://up6.cc/2025/07/175318853994541.png" alt="مقاول بلس" class="h-12 w-32 object-contain">
+                        <h3 class="mr-3 text-xl font-bold" data-i18n="footer.company_name">مقاول بلس</h3>
+                    </div>
+                    <p class="text-themed-lightest" data-i18n="footer.company_description">شركة رائدة في مجال البناء والتشييد بالمملكة العربية السعودية، نقدم حلولاً متكاملة بمعايير عالمية.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer.quick_links">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-themed-lightest hover:text-themed-accent" data-i18n="nav.home">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-themed-lightest hover:text-themed-accent" data-i18n="nav.about">من نحن</a></li>
+                        <li><a href="services.html" class="text-themed-lightest hover:text-themed-accent" data-i18n="nav.services">خدماتنا</a></li>
+                        <li><a href="projects.html" class="text-themed-lightest hover:text-themed-accent" data-i18n="nav.projects">مشاريعنا</a></li>
+                        <li><a href="contact.html" class="text-themed-lightest hover:text-themed-accent" data-i18n="nav.contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer.our_services">خدماتنا</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-themed-lightest hover:text-themed-accent" data-i18n="footer.service1">البناء والتشييد</a></li>
+                        <li><a href="#" class="text-themed-lightest hover:text-themed-accent" data-i18n="footer.service2">التصميم المعماري</a></li>
+                        <li><a href="#" class="text-themed-lightest hover:text-themed-accent" data-i18n="footer.service3">التشطبات الداخلية</a></li>
+                        <li><a href="#" class="text-themed-lightest hover:text-themed-accent" data-i18n="footer.service4">الصيانة والتجديد</a></li>
+                        <li><a href="#" class="text-themed-lightest hover:text-themed-accent" data-i18n="footer.service5">إدارة المشاريع</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-i18n="footer.contact_us">اتصل بنا</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 ml-2 text-themed-accent"></i>
+                            <span class="text-themed-lightest" data-i18n="footer.address">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone ml-2 text-themed-accent"></i>
+                            <span class="text-themed-lightest" data-i18n="footer.phone">966559006064+</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope ml-2 text-themed-accent"></i>
+                            <span class="text-themed-lightest" data-i18n="footer.email">info@muqawil-plus.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3 space-x-reverse mt-4">
+                        <a href="#" class="bg-themed-social-icon hover:bg-themed-accent w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-twitter text-themed-lightest"></i>
+                        </a>
+                        <a href="#" class="bg-themed-social-icon hover:bg-themed-accent w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f text-themed-lightest"></i>
+                        </a>
+                        <a href="#" class="bg-themed-social-icon hover:bg-themed-accent w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-linkedin-in text-themed-lightest"></i>
+                        </a>
+                        <a href="#" class="bg-themed-social-icon hover:bg-themed-accent w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram text-themed-lightest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-themed-lightest border-opacity-20 mt-12 pt-8 text-center text-themed-lightest">
+                <p data-i18n="footer.copyright">© 2023 مقاول بلس شركة ادفانسيد تيك سيستم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced i18next configuration
+        i18next
+            .use(i18nextBrowserLanguageDetector)
+            .use(i18nextHttpBackend)
+            .init({
+                lng: localStorage.getItem('i18nextLng') || 'ar',
+                supportedLngs: ['ar', 'en'],
+                load: 'languageOnly',
+                nonExplicitSupportedLngs: true,
+                fallbackLng: 'ar',
+                debug: false,
+                detection: {
+                    order: ['localStorage'],
+                    caches: ['localStorage']
+                },
+                backend: {
+                    loadPath: '/locales/{{lng}}/{{ns}}.json'
+                },
+                resources: {
+                    ar: {
+                        translation: {
+                            "about.title": "من نحن - مقاول بلس",
+                            "nav.home": "الرئيسية",
+                            "nav.about": "من نحن",
+                            "nav.services": "خدماتنا",
+                            "nav.projects": "مشاريعنا",
+                            "nav.contact": "اتصل بنا",
+                            "header.phone": "+966 50 000 0000",
+                            "about.hero_title": "من نحن",
+                            "about.hero_description": "شركة مقاول بلس رائدة في مجال البناء والتشييد بالمملكة العربية السعودية",
+                            "about.story": "قصتنا ورؤيتنا",
+                            "about.story_paragraph1": "تأسست شركة مقاول بلس في عام 2010 بهدف تقديم حلول بناء متكاملة بمعايير عالمية. ومنذ ذلك الحين، كبرنا لنصبح أحد أبرز مزودي خدمات البناء والتشييد في المملكة العربية السعودية.",
+                            "about.story_paragraph2": "نؤمن بأن البناء ليس مجرد تشييد هياكل، بل هو صناعة بيوت تحكي قصصاً وخلق مجتمعات مزدهرة. لذلك نلتزم بأعلى معايير الجودة والسلامة في كل مشروع ننفذه.",
+                            "about.quality": "جودة عالية",
+                            "about.commitment": "التزام بالمواعيد",
+                            "about.competitive_prices": "أسعار تنافسية",
+                            "about.stats": "أرقامنا تتحدث عنا",
+                            "stats.projects_count": "+250",
+                            "stats.projects_text": "مشروع مكتمل",
+                            "stats.awards_count": "15",
+                            "stats.awards_text": "جائزة وتكريم",
+                            "stats.employees_count": "+120",
+                            "stats.employees_text": "موظف محترف",
+                            "stats.experience_years": "12",
+                            "stats.experience_text": "سنة خبرة",
+                            "about.journey": "رحلة التميز",
+                            "timeline.year1_title": "تأسيس الشركة",
+                            "timeline.year1_description": "بدأت رحلتنا بمشاريع صغيرة في مدينة الرياض، مع فريق مكون من 5 موظفين فقط.",
+                            "timeline.year2_title": "أول مشروع سكني كبير",
+                            "timeline.year2_description": "تنفيذ أول مشروع سكني متكامل بمساحة 10,000 متر مربع في مدينة جدة.",
+                            "timeline.year3_title": "التوسع الإقليمي",
+                            "timeline.year3_description": "افتتاح فروع جديدة في الدمام والخبر، وتوسيع نطاق العمل ليشمل المشاريع التجارية.",
+                            "timeline.year4_title": "الجوائز والتكريم",
+                            "timeline.year4_description": "حصولنا على جائزة أفضل مقاول في المملكة للعام 2020 من قبل وزارة الإسكان.",
+                            "about.team": "فريق القيادة",
+                            "team.member1_name": "نعمان المقبل",
+                            "team.member1_role": "الرئيس التنفيذي",
+                            "team.member1_bio": "رائيس كبار المهندسين بخبرة تزيد عن 20 عاماً في مجال البناء والتشييد، قاد العديد من المشاريع الكبرى في المملكة.",
+                            "team.member2_name": "اسماعيل المقبل",
+                            "team.member2_role": "مدير تنفيذي",
+                            "team.member2_bio": " قيادة وتنفيذ مشاريع نوعية تجمع بين التصميم المعماري الفاخر والحلول التقنية،.",
+                            "team.member3_name": "محمد سعد",
+                            "team.member3_role": "مدير تطوير",
+                            "team.member3_bio": "خبير في أنظمة الجودة والسلامة، حاصل على شهادات عالمية في إدارة الجودة في مشاريع البناء.",
+                            "about.cta": "هل لديك مشروع في ذهنك؟",
+                            "about.cta_description": "فريقنا مستعد لمساعدتك في تحويل رؤيتك إلى واقع ملموس بأعلى معايير الجودة",
+                            "about.cta_button": "اتصل بنا الآن",
+                            "footer.company_name": "مقاول بلس",
+                            "footer.company_description": "شركة رائدة في مجال البناء والتشييد بالمملكة العربية السعودية، نقدم حلولاً متكاملة بمعايير عالمية.",
+                            "footer.quick_links": "روابط سريعة",
+                            "footer.our_services": "خدماتنا",
+                            "footer.service1": "البناء والتشييد",
+                            "footer.service2": "التصميم المعماري",
+                            "footer.service3": "التشطبات الداخلية",
+                            "footer.service4": "الصيانة والتجديد",
+                            "footer.service5": "إدارة المشاريع",
+                            "footer.contact_us": "اتصل بنا",
+                            "footer.address": "الرياض، المملكة العربية السعودية",
+                            "footer.phone": "966559006064+",
+                            "footer.email": "info@muqawil-plus.com",
+                            "footer.copyright": "© 2023 مقاول بلس شركة ادفانسيد تيك سيستم. جميع الحقوق محفوظة."
+                        }
+                    },
+                    en: {
+                        translation: {
+                            "about.title": "About Us - Muqawil Plus",
+                            "nav.home": "Home",
+                            "nav.about": "About",
+                            "nav.services": "Services",
+                            "nav.projects": "Projects",
+                            "nav.contact": "Contact Us",
+                            "header.phone": "+966 50 000 0000",
+                            "about.hero_title": "About Us",
+                            "about.hero_description": "Muqawil Plus is a leading construction company in Saudi Arabia",
+                            "about.story": "Our Story & Vision",
+                            "about.story_paragraph1": "Muqawil Plus was established in 2010 with the aim of providing integrated construction solutions with international standards. Since then, we have grown to become one of the leading providers of construction services in Saudi Arabia.",
+                            "about.story_paragraph2": "We believe that construction is not just about building structures, but about creating homes that tell stories and fostering thriving communities. Therefore, we are committed to the highest standards of quality and safety in every project we undertake.",
+                            "about.quality": "High Quality",
+                            "about.commitment": "On-time Delivery",
+                            "about.competitive_prices": "Competitive Prices",
+                            "about.stats": "Our Numbers Speak",
+                            "stats.projects_count": "+250",
+                            "stats.projects_text": "Completed Projects",
+                            "stats.awards_count": "15",
+                            "stats.awards_text": "Awards & Recognition",
+                            "stats.employees_count": "+120",
+                            "stats.employees_text": "Professional Employees",
+                            "stats.experience_years": "12",
+                            "stats.experience_text": "Years of Experience",
+                            "about.journey": "Excellence Journey",
+                            "timeline.year1_title": "Company Establishment",
+                            "timeline.year1_description": "Our journey began with small projects in Riyadh, with a team of only 5 employees.",
+                            "timeline.year2_title": "First Large Residential Project",
+                            "timeline.year2_description": "Execution of the first integrated residential project covering 10,000 square meters in Jeddah.",
+                            "timeline.year3_title": "Regional Expansion",
+                            "timeline.year3_description": "Opening new branches in Dammam and Khobar, expanding the scope of work to include commercial projects.",
+                            "timeline.year4_title": "Awards and Recognition",
+                            "timeline.year4_description": "Received the Best Contractor Award in the Kingdom for 2020 by the Ministry of Housing.",
+                            "about.team": "Leadership Team",
+                            "team.member1_name": "Nouman Al-Muqbil",
+                            "team.member1_role": "CEO",
+                            "team.member1_bio": "Chief engineer with over 20 years of experience in construction, led many major projects in the Kingdom.",
+                            "team.member2_name": "Ismail Al-Muqbil",
+                            "team.member2_role": "Executive Manager",
+                            "team.member2_bio": "Leading and executing distinctive projects that combine luxurious architectural design and technical solutions.",
+                            "team.member3_name": "Mohammed Saad",
+                            "team.member3_role": "Development Manager",
+                            "team.member3_bio": "Expert in quality and safety systems, holds international certifications in quality management for construction projects.",
+                            "about.cta": "Do you have a project in mind?",
+                            "about.cta_description": "Our team is ready to help you turn your vision into a tangible reality with the highest quality standards.",
+                            "about.cta_button": "Contact Us Now",
+                            "footer.company_name": "Muqawil Plus",
+                            "footer.company_description": "A leading construction company in Saudi Arabia, providing integrated solutions with global standards.",
+                            "footer.quick_links": "Quick Links",
+                            "footer.our_services": "Our Services",
+                            "footer.service1": "Construction & Building",
+                            "footer.service2": "Architectural Design",
+                            "footer.service3": "Interior Finishing",
+                            "footer.service4": "Maintenance & Renovation",
+                            "footer.service5": "Project Management",
+                            "footer.contact_us": "Contact Us",
+                            "footer.address": "Riyadh, Saudi Arabia",
+                            "footer.phone": "+966559006064",
+                            "footer.email": "info@muqawil-plus.com",
+                            "footer.copyright": "© 2023 Muqawil Plus Advanced Tech Systems. All rights reserved."
+                        }
+                    }
+                }
+            }, function(err, t) {
+                updateContent();
+            });
+
+        // Function to update content based on selected language
+        function updateContent() {
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.innerHTML = i18next.t(key);
+            });
+
+            // Update language switcher text
+            document.getElementById('currentLanguage').textContent = 
+                i18next.language === 'ar' ? 'العربية' : 'English';
+
+            // Update document language and direction
+            document.documentElement.lang = i18next.language;
+            document.documentElement.dir = i18next.language === 'ar' ? 'rtl' : 'ltr';
+        }
+
+        // Toggle language dropdown
+        document.getElementById('languageToggle').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.getElementById('languageDropdown').classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            document.getElementById('languageDropdown').classList.add('hidden');
+            document.getElementById('themeDropdown').classList.add('hidden'); // Also close theme dropdown
+        });
+
+        // Language change handler
+        document.querySelectorAll('[data-lang]').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const lang = this.getAttribute('data-lang');
+                i18next.changeLanguage(lang, function(err, t) {
+                    if (err) return console.log('something went wrong loading', err);
+                    updateContent();
+                    localStorage.setItem('i18nextLng', lang);
+                    document.getElementById('languageDropdown').classList.add('hidden');
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() { // Select the mobile menu toggle button
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Theme selection logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeDropdown = document.getElementById('themeDropdown');
+        const currentThemeSpan = document.getElementById('currentTheme');
+        const htmlElement = document.documentElement; // Reference to the html element
+
+        // Function to apply theme
+        function applyTheme(theme) {
+            htmlElement.setAttribute('data-theme', theme);
+            // Update displayed theme name
+            currentThemeSpan.textContent = {
+                'gold': 'ذهبي',
+                'blue': 'أزرق',
+                'pink': 'وردي'
+            }[theme];
+            // Save to local storage
+            localStorage.setItem('selectedTheme', theme);
+        }
+
+        // Initial theme application on load (default to gold)
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'gold';
+            applyTheme(savedTheme);
+        });
+
+        // Toggle theme dropdown
+        themeToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            themeDropdown.classList.toggle('hidden');
+        });
+
+        // Theme change handler
+        themeDropdown.querySelectorAll('[data-theme]').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const theme = this.getAttribute('data-theme');
+                applyTheme(theme);
+                themeDropdown.classList.add('hidden'); // Close dropdown after selection
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=ismailnuman/from-us" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>

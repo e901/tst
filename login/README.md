@@ -1,8 +1,8 @@
 ---
-title: login
+title: from-us
 emoji: 🐳
-colorFrom: gray
-colorTo: gray
+colorFrom: yellow
+colorTo: yellow
 sdk: static
 pinned: false
 tags:
